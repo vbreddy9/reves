@@ -8,6 +8,23 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+app.use(cors({
+  origin: "https://abroad.vidhyavaaradhi.com/", // Allow frontend domain
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true // If using cookies or authentication headers
+}));
+
+// Handle Preflight Requests
+app.options("*", cors());
+
+app.use(bodyParser.json());
+app.use(requestIp.mw());
+
+app.get("/home" ,async(req,res) => {
+  console.log("request incoming")
+  res.status(200).json("Server running 5000");
+})
 // Setup Nodemailer transport
 const transporter = nodemailer.createTransport({
   service: "gmail",
@@ -87,7 +104,7 @@ const notifyAdmin = async (formData) => {
 };
 
 // Handle form submission
-app.post("/send-email", async (req, res) => {
+app.post("/home/send-email", async (req, res) => {
   const { name, email, mobile, pincode } = req.body;
 
   if (!name || !email || !mobile || !pincode) {
