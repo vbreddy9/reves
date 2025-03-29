@@ -59,7 +59,7 @@ const StudyAbroadForm = () => {
     if (!validateForm()) return;
     setIsSubmitting(true);
 
-    fetch("http://localhost:5000/send-email", {
+    fetch("https://api.vidhyavaaradhi.com/send-email", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
