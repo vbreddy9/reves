@@ -9,6 +9,9 @@ export default {
       colors: {
         customBlue: '#2ccedf',
         customDark: '#182033',
+        customWhite: '#fffff',
+        customGray: '#fffff',
+        customlight: '#0064a4',
       },
     },
   },
