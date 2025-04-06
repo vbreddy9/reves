@@ -8,7 +8,6 @@
     { "src": "/home", "dest": "/server.js" },
     { "src": "/home/send-email", "dest": "/server.js" },
 
-    // SPA fallback for React frontend routes
     {
       "handle": "filesystem"
     },
