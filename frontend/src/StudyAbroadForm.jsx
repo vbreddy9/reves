@@ -122,9 +122,9 @@ const StudyAbroadForm = () => {
               <input type="checkbox" name="agreeTerms" className="mr-2" required onChange={handleInputChange} />
               <span>
                 I have read and agreed to 
-                <a href="/home/terms-and-conditions" className="text-blue-500"> T&C </a> 
+                <a href="/terms-and-conditions" className="text-blue-500"> T&C </a> 
                 and 
-                <a href="/home/privacy-policy" className="text-blue-500"> Privacy Policy</a>.
+                <a href="/privacy-policy" className="text-blue-500"> Privacy Policy</a>.
               </span>
 
             </div>
