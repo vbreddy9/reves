@@ -3,38 +3,38 @@ const cors = require("cors");
 const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
 const axios = require("axios");
+const requestIp = require("request-ip"); // ✅ Added import
 
 const app = express();
-app.use(cors());
-app.use(bodyParser.json());
 
+// ✅ CORS configuration
 app.use(cors({
-  origin: "https://abroad.vidhyavaaradhi.com/", // Allow frontend domain
+  origin: "https://abroad.vidhyavaaradhi.com", // ✅ Remove trailing slash
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true // If using cookies or authentication headers
+  credentials: true
 }));
 
-// Handle Preflight Requests
-app.options("*", cors());
-
+// ✅ Middleware setup
 app.use(bodyParser.json());
 app.use(requestIp.mw());
 
-app.get("/home" ,async(req,res) => {
-  console.log("request incoming")
-  res.status(200).json("Server running 5000");
-})
-// Setup Nodemailer transport
+// ✅ Health check route
+app.get("/home", (req, res) => {
+  console.log("GET /home: Request received");
+  res.status(200).json("Server running on port 5000");
+});
+
+// ✅ Nodemailer configuration
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "vidhyavaaradioverseas@gmail.com", // Admin Email
-    pass: "iyxy lefz dyfy bbso", // App Password
+    user: "vidhyavaaradioverseas@gmail.com", // Your Gmail
+    pass: "iyxy lefz dyfy bbso", // App password
   },
 });
 
-// Function to send auto-reply to the user
+// ✅ Auto-reply to user
 const sendAutoReply = async (userEmail, userName) => {
   try {
     const mailOptions = {
@@ -72,7 +72,7 @@ const sendAutoReply = async (userEmail, userName) => {
   }
 };
 
-// Function to notify admin about a new lead
+// ✅ Notify admin
 const notifyAdmin = async (formData) => {
   try {
     const adminMailOptions = {
@@ -87,7 +87,7 @@ const notifyAdmin = async (formData) => {
           <p><strong>Email:</strong> ${formData.email}</p>
           <p><strong>Mobile:</strong> ${formData.mobile}</p>
           <p><strong>Pincode:</strong> ${formData.pincode}</p>
-          <p><strong>IP Address:</strong> ${formData.ip}</p> <!-- Now ensures IPv4 -->
+          <p><strong>IP Address:</strong> ${formData.ip}</p>
           <hr style="border: 1px solid #ddd;">
           <p><strong>Note:</strong> Please follow up with this lead at the earliest.</p>
           <div style="background-color: #007bff; color: white; padding: 10px; text-align: center;">
@@ -103,7 +103,7 @@ const notifyAdmin = async (formData) => {
   }
 };
 
-// Handle form submission
+// ✅ Form submission route
 app.post("/home/send-email", async (req, res) => {
   const { name, email, mobile, pincode } = req.body;
 
@@ -112,7 +112,6 @@ app.post("/home/send-email", async (req, res) => {
   }
 
   try {
-    // Fetch user's public IPv4 address
     const ipResponse = await axios.get("https://api64.ipify.org?format=json");
     const ip = ipResponse.data.ip;
 
@@ -128,6 +127,12 @@ app.post("/home/send-email", async (req, res) => {
   }
 });
 
-// Start server
+// ✅ Optional: Catch-all for unknown routes
+app.use((req, res) => {
+  console.warn(`404 Not Found: ${req.method} ${req.originalUrl}`);
+  res.status(404).json({ error: "Route not found" });
+});
+
+// ✅ Start the server
 const PORT = 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
