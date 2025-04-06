@@ -1,10 +1,20 @@
 {
   "version": 2,
   "builds": [
-    { "src": "server.js", "use": "@vercel/node" }
+    { "src": "server.js", "use": "@vercel/node" },
+    { "src": "public/index.html", "use": "@vercel/static" }
   ],
   "routes": [
     { "src": "/home", "dest": "/server.js" },
-    { "src": "/home/send-email", "dest": "/server.js" }
+    { "src": "/home/send-email", "dest": "/server.js" },
+
+    // SPA fallback for React frontend routes
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
   ]
 }
