@@ -37,6 +37,7 @@ const StudyAbroadForm = () => {
 
   const validateForm = () => {
     let newErrors = {};
+    if (!formData.name.trim()) newErrors.name = "Name is required";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = "Invalid email address";
     }
@@ -94,41 +95,81 @@ const StudyAbroadForm = () => {
               </li>
             ))}
           </ul>
-          {/* Premium Partner Section */}
-            <div className="mt-6 flex flex-row items-center space-x-4">
-              <h2 className="text-lg font-semibold whitespace-nowrap">Premium Partner</h2>
-              <img 
-                src={ruLogo} 
-                alt="University Logo" 
-                className="w-auto h-12 md:h-16 object-contain"
-              />
-            </div>
-
+          <div className="mt-6 flex flex-row items-center space-x-4">
+            <h2 className="text-lg font-semibold whitespace-nowrap">Premium Partner</h2>
+            <img src={ruLogo} alt="University Logo" className="w-auto h-12 md:h-16 object-contain" />
+          </div>
         </div>
-        
+
         <div className="bg-white p-5 sm:p-6 md:p-8 rounded-lg shadow-xl w-full max-w-lg">
           <h2 className="text-xl md:text-2xl font-bold text-center text-gray-900 mb-6">
             Start your Study Abroad Journey
           </h2>
           <form className="space-y-4" onSubmit={handleFormSubmit}>
-            <input type="text" name="name" placeholder="Full Name*" className="w-full p-3 border border-gray-300 rounded" required onChange={handleInputChange} />
-            <input type="email" name="email" placeholder="Email Address*" className="w-full p-3 border border-gray-300 rounded" required onChange={handleInputChange} />
-            {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
-            <PhoneInput country="in" value={formData.mobile} onChange={(value) => setFormData({ ...formData, mobile: value })} inputClass="!w-full py-4 !bg-transparent" />
-            {errors.mobile && <p className="text-red-500 text-sm">{errors.mobile}</p>}
-            <input type="text" name="pincode" placeholder="Pincode*" className="w-full p-3 border border-gray-300 rounded" required onChange={handleInputChange} />
-            {errors.pincode && <p className="text-red-500 text-sm">{errors.pincode}</p>}
-            <div className="flex items-center text-sm">
-              <input type="checkbox" name="agreeTerms" className="mr-2" required onChange={handleInputChange} />
-              <span>
-                I have read and agreed to 
-                <a href="/terms-and-conditions" className="text-blue-500"> T&C </a> 
-                and 
-                <a href="/privacy-policy" className="text-blue-500"> Privacy Policy</a>.
-              </span>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleInputChange}
+              placeholder="Full Name*"
+              className="w-full p-3 border border-gray-300 rounded"
+              required
+            />
+            {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
 
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              placeholder="Email Address*"
+              className="w-full p-3 border border-gray-300 rounded"
+              required
+            />
+            {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+
+            <PhoneInput
+              country="in"
+              value={formData.mobile}
+              onChange={(value) => setFormData({ ...formData, mobile: value })}
+              inputClass="!w-full py-4 !bg-transparent"
+            />
+            {errors.mobile && <p className="text-red-500 text-sm">{errors.mobile}</p>}
+
+            <input
+              type="text"
+              name="pincode"
+              value={formData.pincode}
+              onChange={handleInputChange}
+              placeholder="Pincode*"
+              className="w-full p-3 border border-gray-300 rounded"
+              required
+            />
+            {errors.pincode && <p className="text-red-500 text-sm">{errors.pincode}</p>}
+
+            <div className="flex items-start text-sm">
+              <input
+                type="checkbox"
+                name="agreeTerms"
+                checked={formData.agreeTerms}
+                onChange={handleInputChange}
+                className="mr-2 mt-1"
+              />
+              <span>
+                I have read and agreed to{" "}
+                <a href="/terms-and-conditions" className="text-blue-500 underline">T&C</a> and{" "}
+                <a href="/privacy-policy" className="text-blue-500 underline">Privacy Policy</a>.
+              </span>
             </div>
-            <button type="submit" className="w-full bg-blue-500 text-white p-3 rounded text-lg hover:bg-blue-600 transition" disabled={isSubmitting}>{isSubmitting ? "Submitting..." : "Book your free consultation"}</button>
+            {errors.agreeTerms && <p className="text-red-500 text-sm">{errors.agreeTerms}</p>}
+
+            <button
+              type="submit"
+              className="w-full bg-blue-500 text-white p-3 rounded text-lg hover:bg-blue-600 transition"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "Submitting..." : "Book your free consultation"}
+            </button>
           </form>
         </div>
       </div>
