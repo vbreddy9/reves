@@ -59,14 +59,14 @@ const StudyAbroadForm = () => {
     if (!validateForm()) return;
     setIsSubmitting(true);
 
-    fetch("https://api.vidhyavaaradhi.com/send-email", {
+    fetch("https://api.vidhyavaaradhi.com/home/send-email", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
     })
       .then((response) => response.json())
       .then(() => {
-        navigate("/thank-you");
+        navigate("/home/thank-you");
       })
       .catch((error) => {
         console.error("Error sending email:", error);
@@ -122,9 +122,9 @@ const StudyAbroadForm = () => {
               <input type="checkbox" name="agreeTerms" className="mr-2" required onChange={handleInputChange} />
               <span>
                 I have read and agreed to 
-                <a href="/terms-and-conditions" className="text-blue-500"> T&C </a> 
+                <a href="/home/terms-and-conditions" className="text-blue-500"> T&C </a> 
                 and 
-                <a href="/privacy-policy" className="text-blue-500"> Privacy Policy</a>.
+                <a href="/home/privacy-policy" className="text-blue-500"> Privacy Policy</a>.
               </span>
 
             </div>
