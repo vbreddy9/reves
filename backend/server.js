@@ -3,35 +3,34 @@ const cors = require("cors");
 const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
 const axios = require("axios");
-const requestIp = require("request-ip"); // ✅ Added import
-module.exports = app;
+const requestIp = require("request-ip");
 
-const app = express();
+const app = express(); // ✅ Must be declared before exporting
 
 // ✅ CORS configuration
 app.use(cors({
-  origin: "https://abroad.vidhyavaaradhi.com", // ✅ Remove trailing slash
+  origin: "https://abroad.vidhyavaaradhi.com",
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
 }));
 
-// ✅ Middleware setup
+// ✅ Middleware
 app.use(bodyParser.json());
 app.use(requestIp.mw());
 
-// ✅ Health check route
+// ✅ Health check
 app.get("/home", (req, res) => {
   console.log("GET /home: Request received");
   res.status(200).json("Server running on port 5000");
 });
 
-// ✅ Nodemailer configuration
+// ✅ Nodemailer setup
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "vidhyavaaradioverseas@gmail.com", // Your Gmail
-    pass: "iyxy lefz dyfy bbso", // App password
+    user: "vidhyavaaradioverseas@gmail.com", // your email
+    pass: "iyxy lefz dyfy bbso", // Gmail App password
   },
 });
 
@@ -104,7 +103,7 @@ const notifyAdmin = async (formData) => {
   }
 };
 
-// ✅ Form submission route
+// ✅ Main form handler
 app.post("/home/send-email", async (req, res) => {
   const { name, email, mobile, pincode } = req.body;
 
@@ -128,13 +127,15 @@ app.post("/home/send-email", async (req, res) => {
   }
 });
 
-// ✅ Optional: Catch-all for unknown routes
+// ✅ Fallback route
 app.use((req, res) => {
   console.warn(`404 Not Found: ${req.method} ${req.originalUrl}`);
   res.status(404).json({ error: "Route not found" });
 });
 
-// ✅ Start the server
-const PORT = 5000;
-app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+// ✅ Uncomment this block if you're running locally
+// const PORT = 5000;
+// app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
 
+// ✅ Export app for Vercel (important!)
+module.exports = app;
