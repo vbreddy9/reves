@@ -4,6 +4,7 @@ const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
 const axios = require("axios");
 const requestIp = require("request-ip"); // ✅ Added import
+module.exports = app;
 
 const app = express();
 
@@ -136,3 +137,4 @@ app.use((req, res) => {
 // ✅ Start the server
 const PORT = 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+
