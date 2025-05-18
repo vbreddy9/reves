@@ -17,3 +17,7 @@ html, body {
   max-width: 100%; /* Ensures it does not exceed screen width */
   overflow-x: hidden; /* Prevents any horizontal movement */
 }
+.section-heading {
+  padding-top: 50px; /* Space below navbar */
+  margin-top: -50px; /* Compensate for the section overlap */
+}

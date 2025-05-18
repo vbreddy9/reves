@@ -1,49 +1,78 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import WhatsAppButton from "./WhatsAppButton";
 import StudyAbroadForm from "./StudyAbroadForm";
-import WhyChooseUs from "./WhyChooseUs";
 import AdvantageSection from "./AdvantageSection";
-import UniversitySection from "./UniversitySection";
-import TrainingPrograms from "./TrainingPrograms";
-import SuccessStories from "./SuccessStories";
-import FAQ from "./FAQ";
 import StudyAbroad from "./StudyAbroad";
 import PrivacyPolicy from "./PrivacyPolicy";
 import TermsAndConditions from "./TermsAndConditions";
-import ThankYou from "./ThankYou";
+import ProjectOverview from "./ProjectOverview";
+import AmenitiesSection from "./AmenitiesSection";
+import Banner from "./Banner";
+import ConnectivitySection from "./ConnectivitySection";
+import PricingSection from "./PricingSection";
+import WhatsAppButton from "./WhatsAppButton";
 
 const Home = () => (
   <>
     <StudyAbroadForm />
-    <WhyChooseUs />
-    <AdvantageSection />
-    <UniversitySection />
-    <TrainingPrograms />
-    <SuccessStories />
-    <StudyAbroad />
-    <FAQ />
-    <WhatsAppButton />
+    <div id="project-overview">
+      <h2 className="section-heading"></h2>
+      <ProjectOverview />
+    </div>
+    <div id="amenities">
+      <h2 className="section-heading"></h2>
+      <AmenitiesSection />
+    </div>
+    <div id="pricing">
+      <h2 className="section-heading"></h2>
+      <PricingSection />
+    </div>
+    <div id="nri-support">
+      <h2 className="section-heading"></h2>
+      <AdvantageSection />
+    </div>
+    <div id="banner-section">
+      <Banner />
+    </div>
+    <div id="connectivity">
+      <h2 className="section-heading"></h2>
+      <ConnectivitySection />
+    </div>
+    <div id="about">
+      <h2 className="section-heading"></h2>
+      <StudyAbroad />
+    </div>
+    <WhatsAppButton/>
   </>
 );
 
-const App = () => {
+// This wrapper allows useLocation to work at the top level
+const AppContent = () => {
+  const location = useLocation();
+
+  // Define routes where navbar should be hidden
+  const hideNavbarOn = ["/privacy-policy", "/terms-conditions"];
+  const shouldHideNavbar = hideNavbarOn.includes(location.pathname);
+
   return (
-    <Router>
-      <div>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-          <Route path="/thank-you" element={<ThankYou />} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+    <>
+      {!shouldHideNavbar && <Navbar />}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-conditions" element={<TermsAndConditions />} />
+      </Routes>
+      <Footer />
+    </>
   );
 };
+
+const App = () => (
+  <Router>
+    <AppContent />
+  </Router>
+);
 
 export default App;

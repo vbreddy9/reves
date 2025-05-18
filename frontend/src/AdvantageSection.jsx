@@ -1,31 +1,76 @@
-import React from 'react';
+import React from "react";
+import { FaCheckCircle, FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 
-const advantages = [
-  { icon: "🎓", text: "Finding the Program That’s Right for You" },
-  { icon: "👤", text: "Curated Expert-led Application Assistance" },
-  { icon: "📖", text: "English Assessment Test Prep On-the-go" },
-  { icon: "📂", text: "Hacking the Interviews & the All-important VISA" },
-  { icon: "💰", text: "Solving for Money Money Money!" },
-  { icon: "🏡", text: "Making Sure You Stay Right, And Stay Well" }
+const leftAdvantages = [
+  "Unit Selection",
+  "Easy Financing",
+  "Virtual Presentation",
+];
+
+const rightAdvantages = [
+  "High Resale & Rental Value",
+  "Just Pay 10% Scheme",
+  "Dedicated Support from Sales Manager",
 ];
 
 const AdvantageSection = () => {
   return (
-    <section className="bg-gray-50 py-10 px-4">
-      <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-2xl md:text-3xl font-bold mb-6">
-          <span className="text-black">Vidhyavaaradhi </span>
-          <span className="text-orange-300">Advantage</span>
+    <section className="bg-gradient-to-r from-gray-50 via-white to-gray-100 py-16 px-6">
+      <div className="max-w-6xl mx-auto text-center animate-fade-in">
+        <h2 className="text-4xl font-extrabold mb-3 text-gray-900">
+          Exclusive <span className="text-green-400">NRI Support</span>
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {advantages.map((item, index) => (
-            <div key={index} className="flex items-start space-x-3 p-4 bg-white rounded-lg shadow-md 
-            transition-transform transform hover:scale-105 duration-300">
-              <span className="text-3xl">{item.icon}</span>
-              <p className="text-gray-800 text-lg">{item.text}</p>
-            </div>
-          ))}
+        <p className="text-xl text-gray-700 mb-8">Get Instant Help</p>
+        <hr className="border-t border-gray-300 w-20 mx-auto mb-10" />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
+          <ul className="space-y-6 text-left">
+            {leftAdvantages.map((item, idx) => (
+              <li
+                key={idx}
+                className="flex items-center p-5 bg-white/50 backdrop-blur-lg rounded-xl shadow-lg transition-transform transform hover:scale-105"
+              >
+                <FaCheckCircle className="text-green-600 text-2xl mr-3" />
+                <span className="text-lg text-gray-800">{item}</span>
+              </li>
+            ))}
+          </ul>
+          <ul className="space-y-6 text-left">
+            {rightAdvantages.map((item, idx) => (
+              <li
+                key={idx}
+                className="flex items-center p-5 bg-white/50 backdrop-blur-lg rounded-xl shadow-lg transition-transform transform hover:scale-105"
+              >
+                <FaCheckCircle className="text-green-600 text-2xl mr-3" />
+                <span className="text-lg text-gray-800">{item}</span>
+              </li>
+            ))}
+          </ul>
         </div>
+
+        <p className="text-lg font-medium mb-4">
+          Contact Our - <span className="font-bold text-gray-900">Sales Manager</span> Mr. Sai Kiran
+        </p>
+
+        <div className="flex flex-col sm:flex-row justify-center gap-6 mb-4">
+          
+          <a
+            href="tel:+919515519536"
+            className="blinking-button bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full flex items-center gap-3 shadow-md transition-all duration-300"
+          >
+            <FaPhoneAlt /> Call Us
+          </a>
+          <a
+            href="https://wa.me/9515519536"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="blinking-button bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full flex items-center gap-3 shadow-md transition-all duration-300"
+          >
+            <FaWhatsapp /> Message Us
+          </a>
+        </div>
+
+        <p className="text-sm text-gray-500 mt-6">T & C apply</p>
       </div>
     </section>
   );
