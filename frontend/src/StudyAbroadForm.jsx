@@ -1,46 +1,102 @@
-import React, { useState, useEffect } from "react";
-import "react-phone-input-2/lib/style.css";
-import logo1 from "./assets/Elevation_2.webp";
+import React from "react";
+import logo1 from "./assets/lakeFront_view.webp";
 import { MapPin } from "lucide-react";
 
 const StudyAbroadForm = () => {
-  
-    
   return (
-    <div
-      className="relative w-full min-h-screen flex items-center justify-center bg-cover bg-center px-4 sm:px-6 lg:px-12 py-6"
-      style={{ backgroundImage: `url(${logo1})` }}
-    >
-      <div className="absolute inset-0 bg-black/70"></div>
-      <div className="relative w-full max-w-6xl flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-6">
-        <div className="p-4 md:p-6 lg:p-8 text-white max-w-md md:w-1/2 z-10 text-center md:text-left border border-solid bg-black">
-          <h1 className="text-2xl md:text-4xl font-bold leading-snug">
+    <div className="w-full relative">
+      {/* MOBILE VIEW IMAGE */}
+      <div className="md:hidden w-full h-[300px] bg-no-repeat bg-center bg-contain" style={{ backgroundImage: `url(${logo1})` }}></div>
+
+      {/* MOBILE VIEW CONTENT */}
+      <div className="relative md:hidden w-full max-w-6xl mx-auto px-4 py-2 flex flex-col items-center justify-between space-y-6 z-10">
+        <div className="p-4 text-white max-w-md text-center border bg-black bg-opacity-80 rounded-xl">
+          <h1 className="text-2xl font-bold leading-snug">
             SKY HABITAT by Urbanrise <br />
             <span className="inline-flex items-center text-green-500 text-sm">
-            <MapPin className="w-4 h-4 mr-1 -mt-px" />
-            Miyapur, Hyderabad
-          </span>
-          <hr></hr>
+              <MapPin className="w-4 h-4 mr-1 -mt-px" />
+              Miyapur, Hyderabad
+            </span>
+            <hr className="my-2" />
           </h1>
-          <ul className="mt-4 space-y-3 text-md">
-            {["PAY only 10% NOW", "Luxury 3 BHK Residences", "Surrounded by Top MNCs", "Sky Amenities", "Terrace Amenities", "90% On Possession*"].map((item, index) => (
-              <li key={index} className="flex items-center justify-center md:justify-start">
-                <span className="text-green-400 text-xl md:text-2xl mr-2">✔</span> {item}
+
+          <ul className="mt-4 space-y-2 text-md">
+            {[
+              "PAY only 10% NOW",
+              "REST 90% On Possession*",
+              "No loan, no EMI till handover",
+              "Luxury 3 BHK Residences",
+              "3.5 Acres Central Park",
+              "1 Lacs sq ft Club House",
+              "Rooftop Amenities",
+              
+            ].map((item, index) => (
+              <li key={index} className="flex items-center justify-center">
+                <span className="text-green-400 text-xl mr-2">✔</span>
+                {item}
               </li>
             ))}
           </ul>
-          <hr></hr>
-          <div className="mt-6 flex">
-            <div className="bg-green-100 text-green-600 px-4 py-2 rounded-full shadow-sm border border-green-300">
-              <h2 className="text-sm font-semibold whitespace-nowrap">
-                Price Starting from ₹1.24 Cr* Onwards
-              </h2>
+
+          <hr className="my-4" />
+
+          <div className="mt-4 flex justify-center">
+            <div className="text-green-600 px-4 py-2 shadow-sm text-sm font-semibold">
+                        <a href="tel:+919515519536"
+                          className="blinking-button bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full flex items-center gap-3 shadow-md transition-all duration-300"
+                        >
+                        Starting from ₹1.24 Cr* Onwards
+                        </a>
             </div>
           </div>
-
         </div>
+      </div>
 
-        
+      {/* DESKTOP VIEW */}
+      <div
+        className="hidden md:flex w-full min-h-screen bg-cover bg-center bg-no-repeat items-center justify-start relative"
+        style={{ backgroundImage: `url(${logo1})` }}
+      >
+        {/* Desktop Content */}
+        <div className="relative z-10 bg-black bg-opacity-90 text-white p-10 rounded-lg max-w-md shadow-xl ml-0 mt-10">
+          <h1 className="text-4xl font-bold leading-snug">
+            SKY HABITAT by Urbanrise <br />
+            <span className="inline-flex items-center text-green-500 text-base mt-1">
+              <MapPin className="w-4 h-4 mr-1 -mt-px" />
+              Miyapur, Hyderabad
+            </span>
+            <hr className="my-1 border-gray-600" />
+          </h1>
+
+          <ul className="mt-2 space-y-3 text-lg">
+            {[
+              "PAY only 10% NOW",
+              "REST 90% On Possession*",
+              "No loan, no EMI till handover",
+              "Luxury 3 BHK Residences",
+              "3.5 Acres Central Park",
+              "1 Lacs sq ft Club House",
+              "Rooftop Amenities",
+            ].map((item, index) => (
+              <li key={index} className="flex items-center">
+                <span className="text-green-400 text-2xl mr-2">✔</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+
+          <hr className="my-4 border-gray-600" />
+
+          <div className="mt-4">
+            <div className="text-green-800 px-4 py-2 inline-block font-semibold text-sm">
+              <a href="tel:+919515519536"
+                          className="blinking-button bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full flex items-center gap-3 shadow-md transition-all duration-300"
+                        >
+                        Starting from ₹1.24 Cr* Onwards
+                        </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

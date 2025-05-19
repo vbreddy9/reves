@@ -87,6 +87,7 @@ const Banner = () => {
       });
 
       window.scrollTo({ top: 0, behavior: "smooth" });
+      window.location.reload();
     } catch (error) {
       console.error("Error sending email:", error);
       alert(
@@ -143,7 +144,7 @@ const Banner = () => {
               required
             />
             {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
-
+            
             <PhoneInput
               country="in"
               value={formData.mobile}
@@ -156,6 +157,8 @@ const Banner = () => {
                 name: "mobile",
                 required: true,
               }}
+              
+              
             />
             {errors.mobile && <p className="text-red-500 text-sm">{errors.mobile}</p>}
 
