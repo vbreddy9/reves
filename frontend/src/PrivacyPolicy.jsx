@@ -1,5 +1,5 @@
 import React from "react";
-import pLogo from "./assets/Elevation.webp";
+import pLogo from "./assets/raghava-cinq.png";
 
 const PrivacyPolicy = () => {
   return (

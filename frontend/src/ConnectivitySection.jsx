@@ -1,6 +1,6 @@
 import React from "react";
 import { GraduationCap, Hospital, Network, MapPin } from "lucide-react";
-import map from "./assets/map.webp";
+import map from "./assets/location.webp";
 
 const connectivityItems = [
   {
@@ -29,12 +29,12 @@ const ConnectivitySection = () => {
   return (
     <section className="bg-white py-12 px-4 md:px-16 lg:px-24">
       <div className="text-center mb-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-maroon-800">
-          Seamlessly Connected, <span className="text-green-400">Ideally Positioned</span>
-        </h2>
-        <p className="mt-4 text-gray-600 text-base md:text-lg max-w-3xl mx-auto">
-          SKY HABITAT is located in Miyapur, Hyderabad, offering seamless access to top schools, hospitals, business hubs, and leisure destinations—bringing the perfect balance to life.
-        </p>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-maroon-800 text-center">
+        Seamlessly Connected, <span style={{ color: '#cb8904' }}>Ideally Positioned</span>
+      </h2>
+      <p className="mt-4 text-gray-600 text-sm sm:text-base md:text-lg max-w-3xl mx-auto text-center">
+        CINQ is located in Financial District, Nanakramguda, Hyderabad, offering seamless access to top schools, hospitals, business hubs, and leisure destinations—bringing the perfect balance to life.
+      </p>
       </div>
 
       {/* Two Column Layout */}

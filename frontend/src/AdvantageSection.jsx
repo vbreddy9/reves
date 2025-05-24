@@ -17,9 +17,10 @@ const AdvantageSection = () => {
   return (
     <section className="bg-gradient-to-r from-gray-50 via-white to-gray-100 py-16 px-6">
       <div className="max-w-6xl mx-auto text-center animate-fade-in">
-        <h2 className="text-4xl font-extrabold mb-3 text-gray-900">
-          Exclusive <span className="text-green-400">NRI Support</span>
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold mb-3 text-gray-900">
+          Exclusive <span style={{ color: '#cb8904' }}>NRI Support</span>
         </h2>
+
         <p className="text-xl text-gray-700 mb-8">Get Instant Help</p>
         <hr className="border-t border-gray-300 w-20 mx-auto mb-10" />
 
@@ -30,8 +31,8 @@ const AdvantageSection = () => {
                 key={idx}
                 className="flex items-center p-5 bg-white/50 backdrop-blur-lg rounded-xl shadow-lg transition-transform transform hover:scale-105"
               >
-                <FaCheckCircle className="text-green-600 text-2xl mr-3" />
-                <span className="text-lg text-gray-800">{item}</span>
+                <FaCheckCircle style={{ color: '#cb8904' }} />
+                <span className="px-2 text-lg text-gray-800">{item}</span>
               </li>
             ))}
           </ul>
@@ -41,27 +42,25 @@ const AdvantageSection = () => {
                 key={idx}
                 className="flex items-center p-5 bg-white/50 backdrop-blur-lg rounded-xl shadow-lg transition-transform transform hover:scale-105"
               >
-                <FaCheckCircle className="text-green-600 text-2xl mr-3" />
-                <span className="text-lg text-gray-800">{item}</span>
+                <FaCheckCircle style={{ color: '#cb8904' }} />
+                <span className="px-2 text-lg text-gray-800">{item}</span>
               </li>
             ))}
           </ul>
         </div>
 
-        <p className="text-lg font-medium mb-4">
-          Contact - <span className="font-bold text-gray-900">Mr. Sai Kiran</span> 
-        </p>
+        
 
         <div className="flex flex-col sm:flex-row justify-center gap-6 mb-4">
           
           <a
-            href="tel:+919515519536"
+            href="tel:+919392925831"
             className="blinking-button bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full flex items-center gap-3 shadow-md transition-all duration-300"
           >
             <FaPhoneAlt /> Call Us
           </a>
           <a
-            href="https://wa.me/9515519536"
+            href="https://wa.me/9392925831"
             target="_blank"
             rel="noopener noreferrer"
             className="blinking-button bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full flex items-center gap-3 shadow-md transition-all duration-300"

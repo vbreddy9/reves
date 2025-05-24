@@ -149,11 +149,12 @@ const PopupForm = ({ show, onClose }) => {
 
           <button
             type="submit"
-            className="w-full bg-green-600 text-white p-3 rounded text-lg hover:bg-green-700 transition"
+            className="w-full text-white p-3 rounded text-lg bg-[#cb8904] hover:bg-[#a77203] transition"
             disabled={isSubmitting}
           >
-            {isSubmitting ? "Submitting..." : "Submit"}
+            {isSubmitting ? "Submitting..." : "Submit your request"}
           </button>
+
         </form>
       </div>
     </div>

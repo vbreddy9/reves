@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import logo from "./assets/Elevation.webp";
+import logo from "./assets/cinq-mplans.webp";
 
 const Banner = () => {
   const [formData, setFormData] = useState({
@@ -112,8 +112,8 @@ const Banner = () => {
           </h1>
           <p className="text-lg md:text-xl text-gray-100 mb-4">
             Schedule your{" "}
-            <strong className="text-green-400">exclusive site visit</strong> today at{" "}
-            <strong>Miyapur</strong> — Hyderabad’s most promising address for future-forward living.
+            <span style={{ color: '#cb8904' }}>exclusive site visit</span> today at{" "}
+            <span style={{ color: '#cb8904' }}><strong>Financial District, Nanakramguda</strong></span> — Hyderabad’s most promising address for future-forward living.
           </p>
           <hr className="border-gray-500" />
         </div>
@@ -184,14 +184,14 @@ const Banner = () => {
               </span>
             </div>
             {errors.agreeTerms && <p className="text-red-500 text-sm">{errors.agreeTerms}</p>}
-
             <button
               type="submit"
-              className="w-full bg-green-500 text-white p-3 rounded text-lg hover:bg-green-600 transition"
+              className="w-full text-white p-3 rounded text-lg bg-[#cb8904] hover:bg-[#a77203] transition"
               disabled={isSubmitting}
             >
               {isSubmitting ? "Submitting..." : "Submit your request"}
             </button>
+
           </form>
         </div>
       </div>

@@ -6,8 +6,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto text-center">
         {/* Main Content */}
         <p className="text-[10px] font-light mb-3">
-          ©2025 | SKY HABITAT by Urbanrise (Project RERA No.: P01100006655) Promoted by Authorised Channel Partner.
-        </p>
+          ©2025 | CINQ by Raghava (Project RERA No.: P02400009341) Promoted by Authorised Channel Partner
 
         {/* Disclaimer */}
         <p className="text-[10px] text-gray-400 leading-relaxed mb-3">
@@ -16,9 +15,8 @@ const Footer = () => {
 
         {/* Digital Marketing Partner */}
         <p className="text-[10px] text-gray-400 mb-3">
-          Digital Marketing Partner: <span className="font-semibold"><a href="https://vr2tech.in/" target="_blank" className="text-[10px]">
-           VR2 Technologies
-          </a></span>
+          Digital Marketing Partner: : Aureal Consulting.
+        </p> 
         </p>
 
         {/* Links Section */}

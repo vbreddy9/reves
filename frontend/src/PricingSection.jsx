@@ -10,7 +10,9 @@ const PricingSection = () => {
 
   return (
     <section className="bg-white py-12 px-4 md:px-16 lg:px-24 text-center">
-      <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">Pricing</h2>
+      <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold mb-3 text-gray-900">
+        Pricing & <span style={{ color: '#cb8904' }}>Plans</span>
+      </h2>
       <hr className="border-t-2 border-yellow-800 w-24 mx-auto mb-8" />
 
       <div className="bg-white rounded-lg shadow-md p-6 max-w-3xl mx-auto border border-gray-200">
@@ -20,21 +22,16 @@ const PricingSection = () => {
           <p className="font-semibold text-black">Base Price:</p>
         </div>
         <div className="flex justify-between pt-4 text-left">
-          <p className="text-black">3 BHK</p>
-          <p className="text-black">1509 Sq.Ft</p>
-          <p className="text-black">₹1.24 Cr*</p>
+          <p className="text-black">4 BHK</p>
+          <p className="text-black">3575-3644  Sq.Ft</p>
+          <p className="text-black">₹3.16 Cr*</p>
         </div>
-        <div className="flex justify-between pt-4 text-left">
-          <p className="text-black">3 BHK</p>
-          <p className="text-black">1839 Sq.Ft</p>
-          <p className="text-black">₹1.45 Cr*</p>
-        </div>
-      </div>
+       </div>
 
       <div className="mt-6 py-3 font-semibold text-black text-lg">
-        For Presentations & Site Visit, Contact - {"Mr. Sai Kiran "}
-        <a href="tel:+919502246666" className="text-blue-600 underline">
-          
+        For Presentations & Site Visit, Contact - {""}
+        <a href="tel:+919392925831" className="text-blue-600 underline">
+          +91-9392925831
         </a>
       </div>
 

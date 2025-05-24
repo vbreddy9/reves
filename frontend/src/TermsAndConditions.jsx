@@ -1,5 +1,5 @@
 import React from "react";
-import tLogo from "./assets/Elevation.webp";
+import tLogo from "./assets/raghava-cinq.png";
 
 const TermsAndConditions = () => {
   return (

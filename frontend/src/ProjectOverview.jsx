@@ -2,13 +2,13 @@ import React from "react";
 import { MapPin, Building2, Ruler, Layers, CalendarDays, IndianRupee } from "lucide-react";
 
 const projectDetails = [
-  { label: "Type of Project", value: "Apartments", icon: <Building2 className="w-4 h-4 text-green-500" /> },
-  { label: "Location", value: "Miyapur, Chandannagar, Hyderabad", icon: <MapPin className="w-4 h-4 text-green-500" /> },
-  { label: "Land Area", value: "10.6 Acres", icon: <Ruler className="w-4 h-4 text-green-500" /> },
-  { label: "No. of Towers", value: "05 Towers", icon: <Layers className="w-4 h-4 text-green-500" /> },
-  { label: "Structure", value: "3 Basements + Stilt + 42 Floors" },
-  { label: "Unit Variants", value: "Luxury 3 BHK Residences" },
-  { label: "Size Range", value: "1509 - 1839 Sq.Ft." },
+  { label: "Type of Project", value: "Apartments", icon: <Building2 className="w-4 h-4" style={{ color: '#4f1021' }}/> },
+  { label: "Location", value: "Road No. 2, Financial District, Nanakramguda, Hyderabad– 500032", icon: <MapPin className="w-4 h-4" style={{ color: '#4f1021' }}/> },
+  { label: "Land Area", value: "7.19 Acres", icon: <Ruler className="w-4 h-4" style={{ color: '#4f1021' }} /> },
+  { label: "No. of Towers", value: "05 Towers", icon: <Layers className="w-4 h-4" style={{ color: '#4f1021' }}/> },
+  { label: "Structure", value: "5 Basements + Stilt + 61 Floors" },
+  { label: "Unit Variants", value: "Luxury 4 BHK Residences" },
+  { label: "Size Range", value: "3575 - 3644 Sq.Ft." },
   { label: "Amenities", value: "203 World-Class Amenities." },
   
 ];
@@ -17,7 +17,7 @@ const ProjectOverview = () => {
   return (
     <div className="max-w-3xl mx-auto mt-10 px-1 p-6">
       <div className="bg-white rounded-xl shadow-lg p-4 border">
-        <h2 className="text-2xl font-bold text-center mb-6">Project <span className="text-green-300">Overview</span></h2>
+        <h2 className="text-2xl font-bold text-center mb-6">Project <span style={{ color: '#cb8904' }}>Overview</span></h2>
         <div className="space-y-4">
           {projectDetails.map((item, index) => (
             <div

@@ -1,47 +1,56 @@
 import React, { useState, useEffect } from "react";
-import amenity1 from "./assets/Chess_Terrace.webp";
-import amenity2 from "./assets/Co_Working.webp";
-import amenity3 from "./assets/Club_House.webp";
-import amenity4 from "./assets/BBQ_Party.webp";
-import amenity5 from "./assets/ClubHouse.webp";
-import amenity6 from "./assets/Balcony_cam.webp";
-import amenity7 from "./assets/Seating.webp";
-import amenity8 from "./assets/Rooftop_lounge.webp";
-import amenity9 from "./assets/Sunken.webp";
-import amenity10 from "./assets/Swimming_pool.webp";
+import amenity1 from "./assets/cinq-amenities-1.webp";
+import amenity2 from "./assets/cinq-amenities-2.webp";
+import amenity3 from "./assets/cinq-amenities-3.webp";
+import amenity4 from "./assets/cinq-gallery-image-1.webp";
+import amenity5 from "./assets/cinq-gallery-image-4.webp";
+import amenity6 from "./assets/cinq-gallery-image-6.webp";
+import amenity7 from "./assets/cinq-gallery-image-7.webp";
+import amenity8 from "./assets/cinq-gallery-image-8.webp";
+
 
 const amenities = [
   {
-    id: "tower",
-    label: "Tower Amenities",
-    items: ["Teen Lounge", "Lobby Lounge", "Co-working Pods", "Reading Nook", "Senior Citizens Lounge", "Business Lounge"],
+    id: "ground",
+    label: "Ground Floor",
+    items: ["Reception", "Cafe", "Banquet Hall"],
   },
   {
     id: "stilt Amenities",
-    label: "Stilt Amenities",
-    items: ["Kids Play Zone", "Amphitheatre Seating", "Pet Park", "Cycle Stand", "Flexi Court", "Jogging Walkway", "Butterfly Walkway", "Stretching Terrace", "Skate Route", "Tropical Dry Berm", "Cricket Practice Net", "Climbing Rope", "Table Play", "Sand Pit", "Vision Terrace"],
+    label: "First Floor",
+    items: ["Co-Working Space", "Mini Theatre"],
   },
   {
     id: "terrace",
-    label: "Terrace Amenities",
-    items: ["Stepping Planter", "Rooftop Seating", "Rooftop Terrace", "Shaded Seating", "Trellis Canopy", "Yoga Deck", "Pickleball"],
+    label: "Second Floor",
+    items: ["Badminton Court", "Squash Court"],
   },
   {
     id: "club",
-    label: "Club Amenities",
-    items: ["Banquet Hall", "Indoor Games Room", "Cafe Lounge", "Fitness Studio", "Terrace Pool", "Party Area", "Creche", "Mini Theatre", "Guest rooms", "Squash Court", "salon & spa", "Gym"],
+    label: "Third Floor",
+    items: ["5 Guest Rooms"],
+  },
+  {
+    id: "four",
+    label: "Fourth Floor",
+    items: ["Bowling Alley", "Gym", "Gentleman's Room"],
+  },
+  {
+    id: "fif",
+    label: "Fifth Floor",
+    items: ["Gym HIIT", "Jacuzzi", "Salon", "Spa"],
   },
   {
     id: "sky",
-    label: "Sky Amenities",
-    items: ["Sky Lounge", "Sky Seating", "Lift Lobby", "Rooftop Seating", "Rooftop Terrace", "Shaded Seating", "Changing Room", "Yoga Deck", "Shallow Pool", "Swimming Pool Lobby", "Hot Water Pool", "Landscape", "Elevated Walk way", "View Desk", "Jacuzzi"],
+    label: "Terrace Amenities",
+    items: ["Infinity Pool", "Party Area", "Sit-Out Area"],
   },
 ];
 
-const images = [amenity1, amenity2, amenity3, amenity4, amenity5, amenity6, amenity7, amenity8, amenity9, amenity10];
+const images = [amenity1, amenity2, amenity3, amenity4, amenity5, amenity6, amenity7, amenity8];
 
 const AmenitiesSection = () => {
-  const [selected, setSelected] = useState("tower");
+  const [selected, setSelected] = useState("ground");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
@@ -61,8 +70,8 @@ const AmenitiesSection = () => {
     <section className="bg-neutral-50 py-12 px-4">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">
-          List of 203 World-Class <span className="text-green-400">Amenities</span>
-        </h2>
+        Top-Notch, World-Class <span style={{ color: '#cb8904' }}>Amenities</span>
+      </h2>
 
         {/* Auto-scrolling Images */}
         <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-8 transition-all duration-500">
@@ -83,8 +92,8 @@ const AmenitiesSection = () => {
               key={id}
               className={`px-4 py-2 rounded-lg text-sm sm:text-base font-medium transition ${
                 selected === id
-                  ? "bg-green-600 text-white"
-                  : "bg-green-100 text-green-700 hover:bg-blue-200"
+                  ? "bg-yellow-600 text-white"
+                  : "bg-yellow-100 text-yellow-700 hover:bg-yellow-200"
               }`}
               onClick={() => setSelected(id)}
             >
@@ -100,9 +109,9 @@ const AmenitiesSection = () => {
             ?.items.map((item, index) => (
               <div
                 key={index}
-                className="flex items-center bg-white border border-green-200 shadow-sm rounded-lg px-4 py-3 gap-3"
+                className="flex items-center bg-white border border-yellow-200 shadow-sm rounded-lg px-4 py-3 gap-3"
               >
-                <i className="fas fa-check-circle text-green-500"></i>
+                <i className="fas fa-check-circle text-yellow-500"></i>
                 <span className="text-gray-700 font-medium">{item}</span>
               </div>
             ))}
