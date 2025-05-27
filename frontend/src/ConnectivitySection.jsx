@@ -1,6 +1,6 @@
 import React from "react";
 import { GraduationCap, Hospital, Network, MapPin } from "lucide-react";
-import map from "./assets/location.webp";
+import map from "./assets/maps.webp";
 
 const connectivityItems = [
   {

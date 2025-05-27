@@ -3,13 +3,13 @@ import { MapPin, Building2, Ruler, Layers, CalendarDays, IndianRupee } from "luc
 
 const projectDetails = [
   { label: "Type of Project", value: "Apartments", icon: <Building2 className="w-4 h-4" style={{ color: '#4f1021' }}/> },
-  { label: "Location", value: "Road No. 2, Financial District, Nanakramguda, Hyderabad– 500032", icon: <MapPin className="w-4 h-4" style={{ color: '#4f1021' }}/> },
-  { label: "Land Area", value: "7.19 Acres", icon: <Ruler className="w-4 h-4" style={{ color: '#4f1021' }} /> },
-  { label: "No. of Towers", value: "05 Towers", icon: <Layers className="w-4 h-4" style={{ color: '#4f1021' }}/> },
-  { label: "Structure", value: "5 Basements + Stilt + 61 Floors" },
+  { label: "Location", value: "Rai Durgum, Gachibowli, Hyderabad - 500032.", icon: <MapPin className="w-4 h-4" style={{ color: '#4f1021' }}/> },
+  { label: "Land Area", value: "7 Acres", icon: <Ruler className="w-4 h-4" style={{ color: '#4f1021' }} /> },
+  { label: "No. of Towers", value: "03 Towers", icon: <Layers className="w-4 h-4" style={{ color: '#4f1021' }}/> },
+  { label: "Structure", value: "45 Floors" },
   { label: "Unit Variants", value: "Luxury 4 BHK Residences" },
-  { label: "Size Range", value: "3575 - 3644 Sq.Ft." },
-  { label: "Amenities", value: "203 World-Class Amenities." },
+  { label: "Size Range", value: "5430 - 6605 Sq.Ft." },
+  { label: "Amenities", value: "150+ World-Class Amenities." },
   
 ];
 

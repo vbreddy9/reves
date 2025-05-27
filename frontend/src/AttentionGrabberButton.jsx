@@ -4,12 +4,12 @@ const AttentionGrabberButton = () => {
   const [showButton, setShowButton] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
 
-  const message = encodeURIComponent("Hi, I'm interested in booking a site visit! Raghava CINQ");
+  const message = encodeURIComponent("Hi, I'm interested in booking a site visit! Raghava IRIS");
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowButton(true);
-    }, 7000); // Show after 7 seconds
+    }, 10000); // Show after 10 seconds
 
     return () => clearTimeout(timer);
   }, []);

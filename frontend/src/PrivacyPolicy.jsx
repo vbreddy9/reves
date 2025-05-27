@@ -1,12 +1,12 @@
 import React from "react";
-import pLogo from "./assets/raghava-cinq.png";
+import pLogo from "./assets/iris-banner.webp";
 
 const PrivacyPolicy = () => {
   return (
     <div className="w-full">
       {/* Full-Width Banner Image */}
       <div
-        className="w-full h-40 sm:h-56 md:h-64 lg:h-72 xl:h-80 bg-cover bg-center"
+        className="w-screen h-60 sm:h-72 md:h-80 lg:h-[500px] bg-contain sm:bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url(${pLogo})`,
         }}

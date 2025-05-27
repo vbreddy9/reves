@@ -3,7 +3,8 @@ import axios from "axios";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
-const PopupForm = ({ show, onClose }) => {
+const PopupForm = ({ show: externalShow, onClose: externalOnClose }) => {
+  const [showPopup, setShowPopup] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,12 +16,32 @@ const PopupForm = ({ show, onClose }) => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Fetch IP once on mount
   useEffect(() => {
     axios
       .get("https://api64.ipify.org?format=json")
       .then((res) => setFormData((prev) => ({ ...prev, ip: res.data.ip })))
       .catch(() => setFormData((prev) => ({ ...prev, ip: "unknown" })));
   }, []);
+
+  // Show popup after 10 seconds (only if externalShow is not controlling)
+  useEffect(() => {
+    if (typeof externalShow === "undefined") {
+      const timer = setTimeout(() => {
+        setShowPopup(true);
+      }, 10000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [externalShow]);
+
+  const handleClose = () => {
+    setShowPopup(false);
+    if (externalOnClose) externalOnClose();
+  };
+
+  // Decide whether popup is shown: externalShow overrides internal
+  const isShown = typeof externalShow === "boolean" ? externalShow : showPopup;
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -68,7 +89,7 @@ const PopupForm = ({ show, onClose }) => {
         agreeTerms: false,
         ip: prev.ip,
       }));
-      onClose();
+      handleClose();
     } catch (err) {
       alert("Submission failed. Please try again.");
     } finally {
@@ -76,14 +97,15 @@ const PopupForm = ({ show, onClose }) => {
     }
   };
 
-  if (!show) return null;
+  if (!isShown) return null;
 
   return (
     <div className="fixed inset-0 z-50 bg-black bg-opacity-60 flex items-center justify-center px-4">
       <div className="bg-white p-6 sm:p-8 rounded-lg shadow-xl w-full max-w-lg relative">
         <button
-          onClick={onClose}
+          onClick={handleClose}
           className="absolute top-2 right-2 text-gray-600 hover:text-red-600 text-2xl"
+          aria-label="Close popup"
         >
           &times;
         </button>
@@ -114,20 +136,18 @@ const PopupForm = ({ show, onClose }) => {
           {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
 
           <PhoneInput
-              country="in"
-              value={formData.mobile}
-              onChange={(value) =>
-                setFormData((prev) => ({ ...prev, mobile: value }))
-              }
-              inputProps={{
-                name: "mobile",
-                required: true,
-              }}
-              containerClass="phone-container"
-              inputClass="phone-input"
-            />
-
-
+            country="in"
+            value={formData.mobile}
+            onChange={(value) =>
+              setFormData((prev) => ({ ...prev, mobile: value }))
+            }
+            inputProps={{
+              name: "mobile",
+              required: true,
+            }}
+            containerClass="phone-container"
+            inputClass="phone-input"
+          />
           {errors.mobile && <p className="text-red-500 text-sm">{errors.mobile}</p>}
 
           <div className="flex items-start text-sm">
@@ -141,11 +161,19 @@ const PopupForm = ({ show, onClose }) => {
             />
             <span>
               I authorize Urbanrise to contact me via Call, SMS, WhatsApp. I agree to the{" "}
-              <a href="/terms-conditions" className="text-blue-500 underline">T&C</a> and{" "}
-              <a href="/privacy-policy" className="text-blue-500 underline">Privacy Policy</a>.
+              <a href="/terms-conditions" className="text-blue-500 underline">
+                T&C
+              </a>{" "}
+              and{" "}
+              <a href="/privacy-policy" className="text-blue-500 underline">
+                Privacy Policy
+              </a>
+              .
             </span>
           </div>
-          {errors.agreeTerms && <p className="text-red-500 text-sm">{errors.agreeTerms}</p>}
+          {errors.agreeTerms && (
+            <p className="text-red-500 text-sm">{errors.agreeTerms}</p>
+          )}
 
           <button
             type="submit"
@@ -154,7 +182,6 @@ const PopupForm = ({ show, onClose }) => {
           >
             {isSubmitting ? "Submitting..." : "Submit your request"}
           </button>
-
         </form>
       </div>
     </div>

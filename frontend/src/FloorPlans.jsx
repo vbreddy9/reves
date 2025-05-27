@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import tower1and4 from "./assets/tower1-4.webp";
-import tower2 from "./assets/tower2.webp";
-import tower3and5 from "./assets/tower3-5.webp";
-import masterPlan from "./assets/cinq-mplans.webp";
+import tower1and4 from "./assets/iris_t1.webp";
+import tower2 from "./assets/iris_t2.webp";
+import tower3and5 from "./assets/iris_t3.webp";
+import masterPlan from "./assets/m_plan.webp";
 
 const FloorPlans = () => {
-  const [activeTab, setActiveTab] = useState("Tower 1 & 4");
+  const [activeTab, setActiveTab] = useState("Tower 1");
   const scrollToBanner = () => {
     const bannerSection = document.getElementById("banner-section");
     if (bannerSection) {
@@ -13,10 +13,10 @@ const FloorPlans = () => {
     }
   };
 
-  const tabs = ["Tower 1 & 4", "Tower 2", "Tower 3 & 5", "Master Plan"];
+  const tabs = ["Tower 1", "Tower 2", "Tower 3", "Master Plan"];
 
   const tabContent = {
-    "Tower 1 & 4": {
+    "Tower 1": {
       image: tower1and4,
       highlights: [
         { title: "Spacious Layouts", desc: "Designed with openness and comfort in mind." },
@@ -32,7 +32,7 @@ const FloorPlans = () => {
         { title: "Balanced Lifestyle", desc: "A perfect blend of luxury and functionality." },
       ],
     },
-    "Tower 3 & 5": {
+    "Tower 3": {
       image: tower3and5,
       highlights: [
         { title: "Elevated Living", desc: "Skyline views and ample light." },
@@ -43,7 +43,7 @@ const FloorPlans = () => {
     "Master Plan": {
       image: masterPlan,
       highlights: [
-        { title: "7.19 Acres of Tranquility", desc: "Thoughtfully planned open spaces." },
+        { title: "7 Acres of Tranquility", desc: "Thoughtfully planned open spaces." },
         { title: "Holistic Living", desc: "Wellness, lifestyle and convenience in one place." },
         { title: "Connectivity", desc: "Seamless access across the property." },
       ],
@@ -57,7 +57,7 @@ const FloorPlans = () => {
           A new era of <span style={{ color: '#cb8904' }}>Luxury.</span>
         </h2>
         <p className="text-gray-600 max-w-xl mx-auto">
-          CINQ’s elegant towers offer stunning views and world-class living.
+          IRIS’s elegant towers offer stunning views and world-class living.
         </p>
       </div>
 
@@ -79,11 +79,11 @@ const FloorPlans = () => {
 
       <div className="py-12 px-10 flex flex-col md:flex-row items-start justify-start gap-6 md:gap-4 lg:gap-2 xl:gap-12">
         <img
-          src={tabContent[activeTab].image}
-          alt={`${activeTab} Plan`}
-          className="w-full md:w-1/2 rounded-lg shadow"
-        />
-        <div className="text-gray-700 space-y-5 w-full md:w-1/2 xl:w-[45%]">
+            src={tabContent[activeTab].image}
+            alt={`${activeTab} Plan`}
+            className="w-full md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl rounded-lg shadow"
+          />
+        <div className="text-gray-700 space-y-8 w-full md:w-1/2 xl:w-[45%]">
           {tabContent[activeTab].highlights.map((item, index) => (
             <div key={index}>
               <h4 className="font-semibold text-gray-900">{item.title}</h4>

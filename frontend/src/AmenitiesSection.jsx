@@ -1,53 +1,42 @@
 import React, { useState, useEffect } from "react";
-import amenity1 from "./assets/cinq-amenities-1.webp";
-import amenity2 from "./assets/cinq-amenities-2.webp";
-import amenity3 from "./assets/cinq-amenities-3.webp";
-import amenity4 from "./assets/cinq-gallery-image-1.webp";
-import amenity5 from "./assets/cinq-gallery-image-4.webp";
-import amenity6 from "./assets/cinq-gallery-image-6.webp";
-import amenity7 from "./assets/cinq-gallery-image-7.webp";
-import amenity8 from "./assets/cinq-gallery-image-8.webp";
+import amenity1 from "./assets/yoga.webp";
+import amenity2 from "./assets/co_working.webp";
+import amenity3 from "./assets/crunch.webp";
+import amenity4 from "./assets/gym.webp";
+import amenity5 from "./assets/hall.webp";
+import amenity6 from "./assets/hobby.webp";
+import amenity7 from "./assets/indoor_games.webp";
+import amenity8 from "./assets/salon.webp";
+import amenity9 from "./assets/theatre.webp";
+import amenity10 from "./assets/walking_area.webp";
+import amenity11 from "./assets/water_fall.webp";
 
 
 const amenities = [
   {
     id: "ground",
-    label: "Ground Floor",
-    items: ["Reception", "Cafe", "Banquet Hall"],
+    label: "Relaxation & Community",
+    items: ["Entrance Water Feature", "Arrival Courtyard", "Reading Deck", "Senior Citizens’ Corner", "Seating Corner", "Lobby Garden", "Multi-purpose Lawn", "Amphitheatre"],
   },
   {
     id: "stilt Amenities",
-    label: "First Floor",
-    items: ["Co-Working Space", "Mini Theatre"],
+    label: "Fitness & Sports",
+    items: ["Jogging Track", "Cycling Loop", "Cricket Nets", "Outdoor Fitness", "Tennis Court", "Squash Court", "Basketball Court", "Badminton Courts"],
   },
   {
     id: "terrace",
-    label: "Second Floor",
-    items: ["Badminton Court", "Squash Court"],
+    label: "Children & Recreation",
+    items: ["Frisbee Lawn", "Children's Play Area"],
   },
   {
     id: "club",
-    label: "Third Floor",
-    items: ["5 Guest Rooms"],
+    label: "Clubhouse",
+    items: ["Supermarket", "Lobby", "Co-Working Space", "Toodler Space", "Salon & Spa", "Multipurpose Hall", "Reading Lounge", "Table Tennis", "Indoor Games", "Hobby Rooms", "Guest Rooms", "Business Lounge"],
   },
-  {
-    id: "four",
-    label: "Fourth Floor",
-    items: ["Bowling Alley", "Gym", "Gentleman's Room"],
-  },
-  {
-    id: "fif",
-    label: "Fifth Floor",
-    items: ["Gym HIIT", "Jacuzzi", "Salon", "Spa"],
-  },
-  {
-    id: "sky",
-    label: "Terrace Amenities",
-    items: ["Infinity Pool", "Party Area", "Sit-Out Area"],
-  },
+  
 ];
 
-const images = [amenity1, amenity2, amenity3, amenity4, amenity5, amenity6, amenity7, amenity8];
+const images = [amenity1, amenity2, amenity3, amenity4, amenity5, amenity6, amenity7, amenity8, amenity9, amenity10, amenity11];
 
 const AmenitiesSection = () => {
   const [selected, setSelected] = useState("ground");

@@ -1,12 +1,12 @@
 import React from "react";
-import tLogo from "./assets/raghava-cinq.png";
+import tLogo from "./assets/iris-banner.webp";
 
 const TermsAndConditions = () => {
   return (
     <div className="w-full">
       {/* Fully Responsive Banner Image */}
       <div
-        className="w-full h-40 sm:h-56 md:h-64 lg:h-72 xl:h-80 bg-cover bg-center"
+        className="w-screen h-60 sm:h-72 md:h-80 lg:h-[500px] bg-contain sm:bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url(${tLogo})`,
         }}
