@@ -1,6 +1,6 @@
 import React from "react";
 import { GraduationCap, Hospital, Network, MapPin } from "lucide-react";
-import map from "./assets/maps.webp";
+import map from "./assets/gamya_location.webp";
 
 const connectivityItems = [
   {
@@ -33,7 +33,7 @@ const ConnectivitySection = () => {
         Seamlessly Connected, <span style={{ color: '#cb8904' }}>Ideally Positioned</span>
       </h2>
       <p className="mt-4 text-gray-600 text-sm sm:text-base md:text-lg max-w-3xl mx-auto text-center">
-        CINQ is located in Financial District, Nanakramguda, Hyderabad, offering seamless access to top schools, hospitals, business hubs, and leisure destinations—bringing the perfect balance to life.
+        GAMYA is located in Tellapur, Hyderabad, offering seamless access to top schools, hospitals, business hubs, and leisure destinations—bringing the perfect balance to life.
       </p>
       </div>
 

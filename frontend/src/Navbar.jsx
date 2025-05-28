@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaPhoneAlt, FaBars, FaTimes } from "react-icons/fa";
-import mlogo from "./assets/iris_logo.webp";
+import mlogo from "./assets/gamya_logo.webp";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);

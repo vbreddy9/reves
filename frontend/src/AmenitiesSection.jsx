@@ -1,51 +1,132 @@
 import React, { useState, useEffect } from "react";
-import amenity1 from "./assets/yoga.webp";
-import amenity2 from "./assets/co_working.webp";
-import amenity3 from "./assets/crunch.webp";
-import amenity4 from "./assets/gym.webp";
-import amenity5 from "./assets/hall.webp";
-import amenity6 from "./assets/hobby.webp";
-import amenity7 from "./assets/indoor_games.webp";
-import amenity8 from "./assets/salon.webp";
-import amenity9 from "./assets/theatre.webp";
-import amenity10 from "./assets/walking_area.webp";
-import amenity11 from "./assets/water_fall.webp";
+import amenity1 from "./assets/gamya_tennis.webp";
+import amenity2 from "./assets/gamya_football.webp";
+import amenity3 from "./assets/gamya_garden.webp";
+import amenity4 from "./assets/gamya_gym.webp";
+import amenity5 from "./assets/gamya_hocky.webp";
+import amenity6 from "./assets/gamya_pool.webp";
+import amenity7 from "./assets/gamya_snoker.webp";
+import amenity8 from "./assets/gamya_yoga.webp";
+import amenity9 from "./assets/gamya_shuttle.webp";
 
-
+// Block-wise amenities based on layout map
 const amenities = [
   {
-    id: "ground",
-    label: "Relaxation & Community",
-    items: ["Entrance Water Feature", "Arrival Courtyard", "Reading Deck", "Senior Citizens’ Corner", "Seating Corner", "Lobby Garden", "Multi-purpose Lawn", "Amphitheatre"],
+    id: "block-a",
+    label: "BLOCK A",
+    items: [
+      "Box Cricket",
+      "Zen Garden",
+      "Reflexology Path",
+      "Yoga Deck",
+      "Yoga Lawn",
+      "Meditation Deck",
+    ],
   },
   {
-    id: "stilt Amenities",
-    label: "Fitness & Sports",
-    items: ["Jogging Track", "Cycling Loop", "Cricket Nets", "Outdoor Fitness", "Tennis Court", "Squash Court", "Basketball Court", "Badminton Courts"],
+    id: "block-b",
+    label: "BLOCK B",
+    items: [
+      "Meditation Lawn",
+      "Sand Pit with Climbing Wall",
+      "Bowling",
+      "Play Area for Kids",
+      "Senior Citizen Seating Area",
+    ],
   },
   {
-    id: "terrace",
-    label: "Children & Recreation",
-    items: ["Frisbee Lawn", "Children's Play Area"],
+    id: "block-c",
+    label: "BLOCK C",
+    items: [
+      "Open Gym",
+      "Crossfit Area",
+      "Lounge Seating",
+      "Free Play Lawn",
+    ],
   },
   {
-    id: "club",
-    label: "Clubhouse",
-    items: ["Supermarket", "Lobby", "Co-Working Space", "Toodler Space", "Salon & Spa", "Multipurpose Hall", "Reading Lounge", "Table Tennis", "Indoor Games", "Hobby Rooms", "Guest Rooms", "Business Lounge"],
+    id: "block-d",
+    label: "BLOCK D",
+    items: [
+      "Floor Games",
+      "Indoor Games",
+      "Table Tennis",
+      "Table Games",
+    ],
   },
-  
+  {
+    id: "block-e",
+    label: "BLOCK E",
+    items: [
+      "Leisure Lawn",
+      "Chit Chat Corner",
+      "Green Wall",
+      "Open Movie Screen",
+      "Youngster’s Corner",
+    ],
+  },
+  {
+    id: "block-f",
+    label: "BLOCK F",
+    items: [
+      "Artist Deck",
+      "Work from Garden",
+      "Reading Corner",
+      "Community Farming",
+      "Multi-purpose Lawn",
+      "Alfresco Dining",
+      "Kitty Party Area",
+    ],
+  },
+  {
+    id: "sports",
+    label: "SPORTS ZONE",
+    items: [
+      "Strolling Garden",
+      "Multi-purpose Courts",
+      "Connecting Plaza",
+      "Golf Putting",
+      "Socializing Area",
+      "Mound Garden",
+      "Bus Dropoff and Pickup",
+    ],
+  },
+  {
+    id: "clubhouse",
+    label: "CLUBHOUSE",
+    items: [
+      "Water Feature",
+      "Clubhouse 1 Drop-off",
+      "Stage",
+      "Thematic Plantation",
+      "Event Lawn",
+      "Open Amphitheatre",
+      "Toddler Space",
+      "Salon & Spa",
+    ],
+  },
 ];
 
-const images = [amenity1, amenity2, amenity3, amenity4, amenity5, amenity6, amenity7, amenity8, amenity9, amenity10, amenity11];
+const images = [
+  amenity1,
+  amenity2,
+  amenity3,
+  amenity4,
+  amenity5,
+  amenity6,
+  amenity7,
+  amenity8,
+  amenity9,
+];
 
 const AmenitiesSection = () => {
-  const [selected, setSelected] = useState("ground");
+  const [selected, setSelected] = useState("block-a");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); // Rotate every 3 seconds
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
@@ -59,10 +140,11 @@ const AmenitiesSection = () => {
     <section className="bg-neutral-50 py-12 px-4">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">
-        Top-Notch, World-Class <span style={{ color: '#cb8904' }}>Amenities</span>
-      </h2>
+          70+ Awesome Amenities{" "}
+          <span style={{ color: "#cb8904" }}> Await!</span>
+        </h2>
 
-        {/* Auto-scrolling Images */}
+        {/* Auto-rotating images */}
         <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-8 transition-all duration-500">
           {visibleImages.map((img, index) => (
             <img
@@ -74,7 +156,7 @@ const AmenitiesSection = () => {
           ))}
         </div>
 
-        {/* Amenity Tabs */}
+        {/* Tab buttons for blocks */}
         <div className="flex flex-wrap justify-center gap-3 sm:gap-6 mb-8">
           {amenities.map(({ id, label }) => (
             <button
@@ -91,7 +173,7 @@ const AmenitiesSection = () => {
           ))}
         </div>
 
-        {/* Amenity List */}
+        {/* Amenity items list */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto text-left">
           {amenities
             .find((amenity) => amenity.id === selected)

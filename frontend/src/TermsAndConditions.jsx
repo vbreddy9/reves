@@ -1,5 +1,5 @@
 import React from "react";
-import tLogo from "./assets/iris-banner.webp";
+import tLogo from "./assets/banner_gamya.webp";
 
 const TermsAndConditions = () => {
   return (

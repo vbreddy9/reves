@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -6,7 +7,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto text-center">
         {/* Main Content */}
         <p className="text-[10px] font-light mb-3">
-          ©2025 | IRIS by Raghava (Project RERA No.: P02400005078) Promoted by Authorised Channel Partner
+          ©2025 | GAMYA by Supadha (Project RERA No.: P01100007536) Promoted by Authorised Channel Partner
 
         {/* Disclaimer */}
         <p className="text-[10px] text-gray-400 leading-relaxed mb-3">
@@ -21,12 +22,12 @@ const Footer = () => {
 
         {/* Links Section */}
         <div className="flex justify-center items-center space-x-3 mt-4">
-          <a href="/privacy-policy" target="_blank" className="text-[10px] text-white ">
-            Privacy Policy
-          </a>
-          <a href="/terms-conditions" target="_blank" className="text-[10px] text-white ">
-            Terms & Conditions
-          </a>
+          <Link to="/privacy-policy" className="text-[10px] text-white hover:underline">
+          Privacy Policy
+           </Link>
+          <Link to="/terms-conditions" className="text-[10px] text-white hover:underline">
+          Terms & Conditions
+        </Link>
         </div>
       </div>
     </footer>

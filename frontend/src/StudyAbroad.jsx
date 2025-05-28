@@ -13,7 +13,7 @@ const StudyAbroad = () => {
 
         {/* Main Content */}
         <p className="text-gray-700 mt-4">
-        <strong>Raghava: </strong>A professionally managed organisation that commenced as a conglomerate in 1991, Raghava is committed to excellence, quality, and client satisfaction. Our businesses span the sectors of engineering & construction, real estate, infrastructure, and urban development & management. <br/><br/>We strive for innovativeness by empowering our teams to create value and attain the highest standards. We endeavour to provide reliable and integrated quality services in order to contribute to the infrastructural growth in India. Recently, we emerged as a real estate company developing and building responsible infrastructure through our practices.
+        <strong>Supadha: </strong> is a prime real estate company headquartered in Hyderabad with its operations spread across 3 entities – Supadha Infra, Supadha Developers and Supadha Constructions. <br></br><br></br>Founded by the 2-industry stalwarts Mr. K Brahmaiah & Mr DS Prasad, with their individual experiences and expertise that have benefited the construction landscape of Hyderabad for over 2 decades.
         </p>
 
         
