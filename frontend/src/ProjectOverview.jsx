@@ -3,15 +3,14 @@ import { MapPin, Building2, Ruler, Layers, CalendarDays, IndianRupee } from "luc
 
 const projectDetails = [
   { label: "Type of Project", value: "Apartments", icon: <Building2 className="w-4 h-4" style={{ color: '#4f1021' }}/> },
-  { label: "Location", value: "Tellapur, Hyderabad - 500019.", icon: <MapPin className="w-4 h-4" style={{ color: '#4f1021' }}/> },
-  { label: "Land Area", value: "10.12 Acres", icon: <Ruler className="w-4 h-4" style={{ color: '#4f1021' }} /> },
-  { label: "No. of Towers", value: "06 Towers", icon: <Layers className="w-4 h-4" style={{ color: '#4f1021' }}/> },
-  { label: "Structure", value: "45 Floors" },
-  { label: "Low Density", value: "98 Units Per Acres" },
-  { label: "Clubhouses", value: "74,000 Sq. Ft." },
-  { label: "Podium Level Facilities", value: "60,000 Sq. Ft." },
-  { label: "Unit Variants", value: "Luxury 3&4 BHK Residences" },
-  { label: "Size Range", value: "2430 - 3855 Sq.Ft." },
+  { label: "Location", value: "Neopolis, Hyderabad - 500019.", icon: <MapPin className="w-4 h-4" style={{ color: '#4f1021' }}/> },
+  { label: "Land Area", value: "7.07 Acres", icon: <Ruler className="w-4 h-4" style={{ color: '#4f1021' }} /> },
+  { label: "No. of Towers", value: "05 Towers", icon: <Layers className="w-4 h-4" style={{ color: '#4f1021' }}/> },
+  { label: "Structure", value: "55 Floors" },
+  { label: "Ceiling to ceiling height", value: "12 FT." },
+  { label: "Clubhouse", value: "1,80,000 Sq. Ft." },
+  { label: "Unit Variants", value: "Exclusive 4 BHK Residences" },
+  { label: "Size Range", value: "5250 - 7460 Sq.Ft." },
   { label: "Amenities", value: "70+ World-Class Amenities." },
   
 ];

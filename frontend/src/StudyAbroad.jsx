@@ -13,7 +13,7 @@ const StudyAbroad = () => {
 
         {/* Main Content */}
         <p className="text-gray-700 mt-4">
-        <strong>Supadha: </strong> is a prime real estate company headquartered in Hyderabad with its operations spread across 3 entities – Supadha Infra, Supadha Developers and Supadha Constructions. <br></br><br></br>Founded by the 2-industry stalwarts Mr. K Brahmaiah & Mr DS Prasad, with their individual experiences and expertise that have benefited the construction landscape of Hyderabad for over 2 decades.
+        Established in 2021, <strong>MSN Realty</strong> harnesses the legacy of MSN's success in the pharmaceutical industry. MSN brings robust financial strength and expertise to the real estate sector.<br></br><br></br> MSN Realty is poised to develop a remarkable 20 million square feet of residential and commercial spaces over the next five years. This expansive portfolio will offer a diverse range of options, from luxury residences to thriving commercial establishments, all meticulously crafted to exceed expectations. <br></br><br></br>Our passion lies in creating exceptional spaces that transcend mere architecture. We curate homes where every detail matters-the interplay of light, the harmony of materials and the seamless fusion of form and function. Our commitment to craftsmanship and innovation ensures that each residence is not just a dwelling but an experience-an ode to refined living.
         </p>
 
         

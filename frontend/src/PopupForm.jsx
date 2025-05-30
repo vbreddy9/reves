@@ -74,7 +74,8 @@ const PopupForm = ({ show: externalShow, onClose: externalOnClose }) => {
     setIsSubmitting(true);
 
     try {
-      const res = await axios.post("http://localhost:5000/home/send-email", {
+      const res = await axios.post("http://localhost:5000/home/send-email", // Match backend port here
+        {
         name: formData.name,
         email: formData.email,
         mobile: formData.mobile.replace(/\D/g, ""),
@@ -160,7 +161,7 @@ const PopupForm = ({ show: externalShow, onClose: externalOnClose }) => {
               required
             />
             <span>
-                I authorize Supadha Projects and its representatives to Call, SMS, Email or WhatsApp me. I also accept{" "}
+                I authorize MSN Projects and its representatives to Call, SMS, Email or WhatsApp me. I also accept{" "}
                 T&C {" "}and{" "} Pivacy Policy                 .
               </span>
           </div>

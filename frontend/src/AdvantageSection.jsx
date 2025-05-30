@@ -48,9 +48,7 @@ const AdvantageSection = () => {
             ))}
           </ul>
         </div>
-
-        
-
+  
         <div className="flex flex-col sm:flex-row justify-center gap-6 mb-4">
           
           <a

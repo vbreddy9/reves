@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import tower1and4 from "./assets/block_ab.webp";
-import tower2 from "./assets/block_c.webp";
-import tower3and5 from "./assets/block_d.webp";
-import tower6 from "./assets/block_ef.webp"; // Assuming same as tower3and5
-import masterPlan from "./assets/mplan.webp";
+import TowerAonUnoImg from "./assets/t_aon_uno.webp";
+import TowerEkaOdinImg from "./assets/t_eka_odin.webp";
+import TowerIsaImg from "./assets/t_isa.webp";
+import MasterPlanImg from "./assets/mplan.webp";
+
 
 const FloorPlans = () => {
-  const [activeTab, setActiveTab] = useState("BLOCK A & B");
+  const [activeTab, setActiveTab] = useState("TOWER AON & UNO");
 
   const scrollToBanner = () => {
     const bannerSection = document.getElementById("banner-section");
@@ -15,50 +15,43 @@ const FloorPlans = () => {
     }
   };
 
-  const tabs = ["BLOCK A & B", "BLOCK C", "BLOCK D", "BLOCK E & F", "Master Plan"];
+  const tabs = ["TOWER AON & UNO", "TOWER EKA & ODIN", "TOWER ISA", "Master Plan"];
 
   const tabContent = {
-    "BLOCK A & B": {
-      image: tower1and4,
-      highlights: [
-        { title: "Spacious Layouts", desc: "Designed with openness and comfort in mind." },
-        { title: "Prime Location", desc: "Located at the heart of the community." },
-        { title: "Elegant Interiors", desc: "High-end finishes and fixtures." },
-      ],
-    },
-    "BLOCK C": {
-      image: tower2,
-      highlights: [
-        { title: "Contemporary Design", desc: "Modern layouts and stunning views." },
-        { title: "Premium Living", desc: "Every element crafted to perfection." },
-        { title: "Balanced Lifestyle", desc: "A perfect blend of luxury and functionality." },
-      ],
-    },
-    "BLOCK D": {
-      image: tower3and5,
-      highlights: [
-        { title: "Elevated Living", desc: "Skyline views and ample light." },
-        { title: "Smart Floor Plans", desc: "Intelligently designed for family comfort." },
-        { title: "Exclusive Access", desc: "Dedicated entrances and privacy zones." },
-      ],
-    },
-    "BLOCK E & F": {
-      image: tower6,
-      highlights: [
-        { title: "Sophisticated Spaces", desc: "Crafted with precision and purpose." },
-        { title: "Luxury Meets Practicality", desc: "Built for comfort and convenience." },
-        { title: "Community-Centric Design", desc: "Blend of privacy and shared amenities." },
-      ],
-    },
-    "Master Plan": {
-      image: masterPlan,
-      highlights: [
-        { title: "10.12 Acres of Tranquility", desc: "Thoughtfully planned open spaces." },
-        { title: "Holistic Living", desc: "Wellness, lifestyle and convenience in one place." },
-        { title: "Connectivity", desc: "Seamless access across the property." },
-      ],
-    },
-  };
+  "TOWER AON & UNO": {
+    image: TowerAonUnoImg,
+    highlights: [
+      { title: "Spacious Layouts", desc: "Designed with openness and comfort in mind." },
+      { title: "Prime Location", desc: "Located at the heart of the community." },
+      { title: "Elegant Interiors", desc: "High-end finishes and fixtures." },
+    ],
+  },
+  "TOWER EKA & ODIN": {
+    image: TowerEkaOdinImg,
+    highlights: [
+      { title: "Contemporary Design", desc: "Modern layouts and stunning views." },
+      { title: "Premium Living", desc: "Every element crafted to perfection." },
+      { title: "Balanced Lifestyle", desc: "A perfect blend of luxury and functionality." },
+    ],
+  },
+  "TOWER ISA": {
+    image: TowerIsaImg,
+    highlights: [
+      { title: "Elevated Living", desc: "Skyline views and ample light." },
+      { title: "Smart Floor Plans", desc: "Intelligently designed for family comfort." },
+      { title: "Exclusive Access", desc: "Dedicated entrances and privacy zones." },
+    ],
+  },
+  "Master Plan": {
+    image: MasterPlanImg,
+    highlights: [
+      { title: "7.7 Acres of Tranquility", desc: "Thoughtfully planned open spaces." },
+      { title: "Holistic Living", desc: "Wellness, lifestyle and convenience in one place." },
+      { title: "Connectivity", desc: "Seamless access across the property." },
+    ],
+  },
+};
+
 
   return (
     <section className="py-12 px-4 md:px-16 bg-white">
@@ -67,7 +60,7 @@ const FloorPlans = () => {
           With harmony in <span style={{ color: '#cb8904' }}>Nature</span>
         </h2>
         <p className="text-gray-600 max-w-xl mx-auto">
-          GAMYA’s elegant blocks offer stunning views and world-class living.
+         ONE by MSN’s elegant blocks offer stunning views and world-class living.
         </p>
       </div>
 

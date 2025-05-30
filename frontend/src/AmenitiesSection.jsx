@@ -1,108 +1,83 @@
 import React, { useState, useEffect } from "react";
-import amenity1 from "./assets/gamya_tennis.webp";
-import amenity2 from "./assets/gamya_football.webp";
-import amenity3 from "./assets/gamya_garden.webp";
-import amenity4 from "./assets/gamya_gym.webp";
-import amenity5 from "./assets/gamya_hocky.webp";
-import amenity6 from "./assets/gamya_pool.webp";
-import amenity7 from "./assets/gamya_snoker.webp";
-import amenity8 from "./assets/gamya_yoga.webp";
-import amenity9 from "./assets/gamya_shuttle.webp";
+import amenity1 from "./assets/badminton.webp";
+import amenity2 from "./assets/basketball.webp";
+import amenity3 from "./assets/gym.webp";
+import amenity4 from "./assets/hall.webp";
+import amenity5 from "./assets/play_area.webp";
+import amenity6 from "./assets/swimming_pool.webp";
+import amenity7 from "./assets/walking_area.webp";
+import amenity8 from "./assets/spa.webp";
+import amenity9 from "./assets/yoga.webp";
 
 // Block-wise amenities based on layout map
 const amenities = [
   {
-    id: "block-a",
-    label: "BLOCK A",
+    id: "tower-a",
+    label: "TOWER AON",
     items: [
-      "Box Cricket",
-      "Zen Garden",
-      "Reflexology Path",
-      "Yoga Deck",
-      "Yoga Lawn",
-      "Meditation Deck",
+      "Dance Room",
+      "Soccer Pool",
+      "Dart Room",
+      "Multipurpose Room",
+      "Coffee Lounge",
+      "Entertainment Lounge", "Chess Lounge", "Recording Room"
     ],
   },
   {
     id: "block-b",
-    label: "BLOCK B",
+    label: "TOWER EKA",
     items: [
-      "Meditation Lawn",
-      "Sand Pit with Climbing Wall",
-      "Bowling",
-      "Play Area for Kids",
-      "Senior Citizen Seating Area",
-    ],
+      "2 Squash Courts",
+      "Cricket Simulator",
+      "Golf Simulator",
+      "Indoor Play Zone",
+      "Pool Table", "Convenience Store"
+    ], 
   },
   {
     id: "block-c",
-    label: "BLOCK C",
+    label: "TOWER ISA",
     items: [
-      "Open Gym",
-      "Crossfit Area",
-      "Lounge Seating",
-      "Free Play Lawn",
+      "Aqua Gym",
+      "Temperature Controlled Pool",
+      "Lounge",
+      "Coffee Lounge", "Pool Table", ""
     ],
   },
   {
     id: "block-d",
-    label: "BLOCK D",
+    label: "TOWER ODIN",
     items: [
-      "Floor Games",
-      "Indoor Games",
-      "Table Tennis",
-      "Table Games",
+      "Mini-Theatre",
+      "Bowling",
+      "Creche",
+      "Kids’ Learning Centre", "VR Room", "Dance Floor With Light", "Co-working station", "Science Lab", "Napping Pod", "Table Tennis", "Rock Climbing", "Play Zone"
     ],
   },
   {
     id: "block-e",
-    label: "BLOCK E",
+    label: "TOWER UNO",
     items: [
-      "Leisure Lawn",
-      "Chit Chat Corner",
-      "Green Wall",
-      "Open Movie Screen",
-      "Youngster’s Corner",
+      "Library",
+      "Story Nook",
+      "Banquet Hall with Kitchen",
+      "Pharmacy",
+      "Story Nook", "Working Pods", "Multipurpose Room", "Clinic With Emergency Room"
     ],
   },
-  {
-    id: "block-f",
-    label: "BLOCK F",
-    items: [
-      "Artist Deck",
-      "Work from Garden",
-      "Reading Corner",
-      "Community Farming",
-      "Multi-purpose Lawn",
-      "Alfresco Dining",
-      "Kitty Party Area",
-    ],
-  },
-  {
-    id: "sports",
-    label: "SPORTS ZONE",
-    items: [
-      "Strolling Garden",
-      "Multi-purpose Courts",
-      "Connecting Plaza",
-      "Golf Putting",
-      "Socializing Area",
-      "Mound Garden",
-      "Bus Dropoff and Pickup",
-    ],
-  },
+ 
   {
     id: "clubhouse",
     label: "CLUBHOUSE",
     items: [
-      "Water Feature",
-      "Clubhouse 1 Drop-off",
-      "Stage",
-      "Thematic Plantation",
-      "Event Lawn",
-      "Open Amphitheatre",
-      "Toddler Space",
-      "Salon & Spa",
+      "Aerobics",
+      "Banquet with Kitchen",
+      "Boxing",
+      "Badminton Courts",
+      "Ace Lounge",
+      "Guest Rooms",
+      "Indoor Gym",
+      "Luxury Waiting Lounges", "Pantry & Store", "Queen’s Lounge", "Spa, Salon & Sauna", "Terrace Party Zone", "Zumba", "Yoga"
     ],
   },
 ];
@@ -120,7 +95,7 @@ const images = [
 ];
 
 const AmenitiesSection = () => {
-  const [selected, setSelected] = useState("block-a");
+  const [selected, setSelected] = useState("tower-a");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {

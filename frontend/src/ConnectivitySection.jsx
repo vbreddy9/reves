@@ -1,6 +1,6 @@
 import React from "react";
 import { GraduationCap, Hospital, Network, MapPin } from "lucide-react";
-import map from "./assets/gamya_location.webp";
+import map from "./assets/loc.webp";
 
 const connectivityItems = [
   {
@@ -33,7 +33,7 @@ const ConnectivitySection = () => {
         Seamlessly Connected, <span style={{ color: '#cb8904' }}>Ideally Positioned</span>
       </h2>
       <p className="mt-4 text-gray-600 text-sm sm:text-base md:text-lg max-w-3xl mx-auto text-center">
-        GAMYA is located in Tellapur, Hyderabad, offering seamless access to top schools, hospitals, business hubs, and leisure destinations—bringing the perfect balance to life.
+        ONE is located in Neopolis, Hyderabad, offering seamless access to top schools, hospitals, business hubs, and leisure destinations—bringing the perfect balance to life.
       </p>
       </div>
 
@@ -61,8 +61,8 @@ const ConnectivitySection = () => {
             alt="Map"
             className="w-full h-auto object-cover rounded-lg"
           />
-          <button className="absolute top-4 right-4 bg-maroon-700 text-white px-4 py-2 rounded-lg hover:bg-maroon-800 transition">
-            Navigate to CINQ
+          <button className="absolute top-4 right-4 bg-maroon-700 text-gray px-4 py-2 rounded-lg hover:bg-maroon-800 transition">
+            Navigate to ONE
           </button>
         </div>
       </div>
