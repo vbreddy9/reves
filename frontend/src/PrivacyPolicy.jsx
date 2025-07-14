@@ -1,5 +1,5 @@
 import React from "react";
-import pLogo from "./assets/banner_msn.png";
+import pLogo from "./assets/banner.png";
 
 const PrivacyPolicy = () => {
   return (

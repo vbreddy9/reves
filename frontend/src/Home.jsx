@@ -35,10 +35,10 @@ const Home = () => {
       </div>
       <div id="pricing">
         <h2 className="section-heading"></h2>
-        <PricingSection />
+        
       </div>
       
-        <FloorPlans/>
+        <PricingSection/>
       
       <div id="nri-support">
         <h2 className="section-heading"></h2>

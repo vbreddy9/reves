@@ -57,10 +57,17 @@ const FloorPlans = () => {
     <section className="py-12 px-4 md:px-16 bg-white">
       <div className="text-center mb-10">
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold mb-3 text-gray-900">
-          With harmony in <span style={{ color: '#cb8904' }}>Nature</span>
+          With harmony in <span
+            style={{
+              background: "linear-gradient(to right, #cb8904, #fa6a04)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              display: "inline-block",
+            }}
+          >Nature</span>
         </h2>
         <p className="text-gray-600 max-w-xl mx-auto">
-         ONE by MSN’s elegant blocks offer stunning views and world-class living.
+         REVES Twonship elegant blocks offer stunning views and world-class living.
         </p>
       </div>
 

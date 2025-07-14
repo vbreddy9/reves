@@ -18,7 +18,14 @@ const AdvantageSection = () => {
     <section className="bg-gradient-to-r from-gray-50 via-white to-gray-100 py-16 px-6">
       <div className="max-w-6xl mx-auto text-center animate-fade-in">
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold mb-3 text-gray-900">
-          Exclusive <span style={{ color: '#cb8904' }}>NRI Support</span>
+          Exclusive <span
+            style={{
+              background: "linear-gradient(to right, #cb8904, #fa6a04)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              display: "inline-block",
+            }}
+          >NRI Support</span>
         </h2>
 
         <p className="text-xl text-gray-700 mb-8">Get Instant Help</p>
@@ -52,13 +59,13 @@ const AdvantageSection = () => {
         <div className="flex flex-col sm:flex-row justify-center gap-6 mb-4">
           
           <a
-            href="tel:+919392925831"
+            href="tel:+919100298446"
             className="blinking-button bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full flex items-center gap-3 shadow-md transition-all duration-300"
           >
             <FaPhoneAlt /> Call Us
           </a>
           <a
-            href="https://wa.me/9392925831"
+            href="https://wa.me/9100298446"
             target="_blank"
             rel="noopener noreferrer"
             className="blinking-button bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full flex items-center gap-3 shadow-md transition-all duration-300"

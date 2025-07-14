@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto text-center">
         {/* Main Content */}
         <p className="text-[10px] font-light mb-3">
-          ©2025 |ONE by MSN (Project RERA No.: P02400009393) Promoted by Authorised Channel Partner
+          ©2025 | REVES Township (LP No: 000041/LO/PLG/HMDA/2024) by Garudadri Developers 
 
         {/* Disclaimer */}
         <p className="text-[10px] text-gray-400 leading-relaxed mb-3">
@@ -15,9 +15,7 @@ const Footer = () => {
         </p>
 
         {/* Digital Marketing Partner */}
-        <p className="text-[10px] text-gray-400 mb-3">
-          Digital Marketing Partner: : Aureal Consulting.
-        </p> 
+        
         </p>
 
         {/* Links Section */}

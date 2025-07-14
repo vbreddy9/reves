@@ -1,166 +1,47 @@
-import React, { useState, useEffect } from "react";
-import amenity1 from "./assets/badminton.webp";
-import amenity2 from "./assets/basketball.webp";
-import amenity3 from "./assets/gym.webp";
-import amenity4 from "./assets/hall.webp";
-import amenity5 from "./assets/play_area.webp";
-import amenity6 from "./assets/swimming_pool.webp";
-import amenity7 from "./assets/walking_area.webp";
-import amenity8 from "./assets/spa.webp";
-import amenity9 from "./assets/yoga.webp";
+import React from "react";
+import { FaCheckCircle, FaTree, FaTint, FaRoad, FaLightbulb, FaShieldAlt, FaChild, FaBasketballBall, FaWalking, FaWater } from "react-icons/fa";
 
-// Block-wise amenities based on layout map
-const amenities = [
-  {
-    id: "tower-a",
-    label: "TOWER AON",
-    items: [
-      "Dance Room",
-      "Soccer Pool",
-      "Dart Room",
-      "Multipurpose Room",
-      "Coffee Lounge",
-      "Entertainment Lounge", "Chess Lounge", "Recording Room"
-    ],
-  },
-  {
-    id: "block-b",
-    label: "TOWER EKA",
-    items: [
-      "2 Squash Courts",
-      "Cricket Simulator",
-      "Golf Simulator",
-      "Indoor Play Zone",
-      "Pool Table", "Convenience Store"
-    ], 
-  },
-  {
-    id: "block-c",
-    label: "TOWER ISA",
-    items: [
-      "Aqua Gym",
-      "Temperature Controlled Pool",
-      "Lounge",
-      "Coffee Lounge", "Pool Table", ""
-    ],
-  },
-  {
-    id: "block-d",
-    label: "TOWER ODIN",
-    items: [
-      "Mini-Theatre",
-      "Bowling",
-      "Creche",
-      "Kids’ Learning Centre", "VR Room", "Dance Floor With Light", "Co-working station", "Science Lab", "Napping Pod", "Table Tennis", "Rock Climbing", "Play Zone"
-    ],
-  },
-  {
-    id: "block-e",
-    label: "TOWER UNO",
-    items: [
-      "Library",
-      "Story Nook",
-      "Banquet Hall with Kitchen",
-      "Pharmacy",
-      "Story Nook", "Working Pods", "Multipurpose Room", "Clinic With Emergency Room"
-    ],
-  },
- 
-  {
-    id: "clubhouse",
-    label: "CLUBHOUSE",
-    items: [
-      "Aerobics",
-      "Banquet with Kitchen",
-      "Boxing",
-      "Badminton Courts",
-      "Ace Lounge",
-      "Guest Rooms",
-      "Indoor Gym",
-      "Luxury Waiting Lounges", "Pantry & Store", "Queen’s Lounge", "Spa, Salon & Sauna", "Terrace Party Zone", "Zumba", "Yoga"
-    ],
-  },
-];
-
-const images = [
-  amenity1,
-  amenity2,
-  amenity3,
-  amenity4,
-  amenity5,
-  amenity6,
-  amenity7,
-  amenity8,
-  amenity9,
+const highlights = [
+  { icon: <FaCheckCircle />, text: "100% Vastu" },
+  { icon: <FaWater />, text: "Overhead Water Tank" },
+  { icon: <FaTint />, text: "Rain Water Harvesting" },
+  { icon: <FaTree />, text: "Parks with Landscaping" },
+  { icon: <FaRoad />, text: "100' Black Top Roads" },
+  { icon: <FaRoad />, text: "30' Black Top Roads" },
+  { icon: <FaTint />, text: "Underground Drainage" },
+  { icon: <FaRoad />, text: "System Modern Modular Street" },
+  { icon: <FaLightbulb />, text: "Electricity & Lights 24/7 Security" },
+  { icon: <FaWalking />, text: "Designed park with walking & cycling tracks" },
+  { icon: <FaChild />, text: "Kids play area with play equipment" },
+  { icon: <FaBasketballBall />, text: "Basketball, shuttle courts & provision for yoga" },
 ];
 
 const AmenitiesSection = () => {
-  const [selected, setSelected] = useState("tower-a");
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const visibleImages = [
-    images[currentImageIndex],
-    images[(currentImageIndex + 1) % images.length],
-    images[(currentImageIndex + 2) % images.length],
-  ];
-
   return (
-    <section className="bg-neutral-50 py-12 px-4">
-      <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">
-          70+ Awesome Amenities{" "}
-          <span style={{ color: "#cb8904" }}> Await!</span>
-        </h2>
+    <section className="bg-orange-50 py-12 px-4">
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-10">
+          <h2 className="text-2xl font-bold text-center mb-6">Project <span
+            style={{
+              background: 'linear-gradient(to right, #cb8904, #fa6a04)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              display: 'inline-block',
+            }}
+          >
+            Highlights</span></h2>
+        </div>
 
-        {/* Auto-rotating images */}
-        <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-8 transition-all duration-500">
-          {visibleImages.map((img, index) => (
-            <img
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {highlights.map((item, index) => (
+            <div
               key={index}
-              src={img}
-              alt={`Amenity ${index}`}
-              className="rounded-xl w-full md:w-1/3 object-cover"
-            />
-          ))}
-        </div>
-
-        {/* Tab buttons for blocks */}
-        <div className="flex flex-wrap justify-center gap-3 sm:gap-6 mb-8">
-          {amenities.map(({ id, label }) => (
-            <button
-              key={id}
-              className={`px-4 py-2 rounded-lg text-sm sm:text-base font-medium transition ${
-                selected === id
-                  ? "bg-yellow-600 text-white"
-                  : "bg-yellow-100 text-yellow-700 hover:bg-yellow-200"
-              }`}
-              onClick={() => setSelected(id)}
+              className="flex items-start gap-4 bg-white shadow-md border border-orange-100 rounded-lg p-4"
             >
-              {label}
-            </button>
+              <div className="text-orange-500 text-xl">{item.icon}</div>
+              <p className="text-gray-800 text-base font-medium">{item.text}</p>
+            </div>
           ))}
-        </div>
-
-        {/* Amenity items list */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto text-left">
-          {amenities
-            .find((amenity) => amenity.id === selected)
-            ?.items.map((item, index) => (
-              <div
-                key={index}
-                className="flex items-center bg-white border border-yellow-200 shadow-sm rounded-lg px-4 py-3 gap-3"
-              >
-                <i className="fas fa-check-circle text-yellow-500"></i>
-                <span className="text-gray-700 font-medium">{item}</span>
-              </div>
-            ))}
         </div>
       </div>
     </section>

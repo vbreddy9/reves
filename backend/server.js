@@ -30,15 +30,15 @@ app.get("/home", (req, res) => {
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "admin@aurealconsulting.com",
-    pass: "ihdt hwnd ipyx iacl", // Replace with your actual Gmail app password
+    user: "kvreddy499@gmail.com",
+    pass: "rznh oalu cdml dkqv", // Replace with your actual Gmail app password
   },
 });
 
 // Send Auto-Reply Email to user
 const sendAutoReply = async (userEmail, userName) => {
   const mailOptions = {
-    from: `"ONE by MSN" <admin@aurealconsulting.com>`,
+    from: `"REVES Township" <kvreddy499@gmail.com>`,
     to: userEmail,
     subject: "Thank You for Your Interest!",
     html: `
@@ -49,19 +49,19 @@ const sendAutoReply = async (userEmail, userName) => {
 
         <div style="padding: 20px;">
           <h2 style="color: #cb8904;">Hello ${userName},</h2>
-          <p>Thank you for reaching out to the <strong>ONE</strong> by MSN Team</strong>!</p>
+          <p>Thank you for reaching out to the <strong>REVES</strong> by Garudadri Developers</strong>!</p>
           <p>We appreciate your interest and will get in touch with you shortly to assist you further.</p>
 
           <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;" />
 
           <p style="font-size: 14px; color: #555;">
             In the meantime, if you have any questions, feel free to call us anytime at 
-            <strong><a href="tel:+919392925831" style="color: #cb8904; text-decoration: none;">+91-9392925831</a></strong>.
+            <strong><a href="tel:+919100298446" style="color: #cb8904; text-decoration: none;">+91-9100298446</a></strong>.
           </p>
         </div>
 
         <div style="background-color: #f0f0f0; padding: 15px 20px; font-size: 14px; text-align: center; color: #666;">
-          <p style="margin: 0; font-style: italic;">Warm regards,<br/>ONE by MSN Team</p>
+          <p style="margin: 0; font-style: italic;">Warm regards,<br/>Garudadri Developers Team</p>
         </div>
       </div>
     `,
@@ -73,9 +73,9 @@ const sendAutoReply = async (userEmail, userName) => {
 // Notify Admin with Form Data
 const notifyAdmin = async (formData) => {
   const mailOptions = {
-    from: `"ONE by MSN" <admin@aurealconsulting.com>`,
-    to: "ayesha@aurealconsulting.com",
-    subject: "New Lead - ONE by MSN",
+    from: `"REVES Township" <kvreddy499@gmail.com>`,
+    to: "kvreddy499@gmail.com",
+    subject: "New Lead - REVES Township",
     html: `
       <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: auto; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
         <div style="background-color: #cb8904; color: white; padding: 15px 20px; text-align: center;">
@@ -109,7 +109,7 @@ const notifyAdmin = async (formData) => {
           </p>
           <p style="margin: 8px 0 0; font-style: italic; color: #555;">
             Thank you,<br/>
-            ONE by MSN Team
+            Garudadri Developers Team
           </p>
         </div>
       </div>

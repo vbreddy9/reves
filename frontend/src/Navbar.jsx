@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaPhoneAlt, FaBars, FaTimes } from "react-icons/fa";
-import mlogo from "./assets/msn_logo.webp";
+import mlogo from "./assets/logo.jpeg";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -58,18 +58,21 @@ const Navbar = () => {
         }`}
       >
         <button onClick={() => scrollToSection("project-overview")} className="px-4 py-2 border border-transparent border rounded hover:border-green-700 transition duration-300">Project Overview</button>
-        <button onClick={() => scrollToSection("amenities")}  className="px-4 py-2 border border-transparent border rounded hover:border-green-700 transition duration-300">Amenities</button>
+        <button onClick={() => scrollToSection("amenities")}  className="px-4 py-2 border border-transparent border rounded hover:border-green-700 transition duration-300">Highlights</button>
         <button onClick={() => scrollToSection("pricing")}className="px-4 py-2 border border-transparent border rounded hover:border-green-700 transition duration-300">Pricing</button>
         <button onClick={() => scrollToSection("nri-support")} className="px-4 py-2 border border-transparent border rounded hover:border-green-700 transition duration-300">NRI Support</button>
         <button onClick={() => scrollToSection("connectivity")} className="px-4 py-2 border border-transparent border rounded hover:border-green-700 transition duration-300">Connectivity</button>
         <button onClick={() => scrollToSection("about")} className="px-4 py-2 border border-transparent border rounded hover:border-green-700 transition duration-300">About</button>
         <a
-        href="callto:+919392925831"
-        className="blinking-button px-4 py-2 text-white rounded-full shadow-md hover:opacity-90 transition duration-300"
-        style={{ backgroundColor: '#4f1021' }}
-      >
-        Call +91-9392925831
-      </a>
+            href="tel:+919100298446"
+            className="blinking-button px-4 py-2 text-white rounded-full shadow-md hover:opacity-90 transition duration-300"
+            style={{ background: 'linear-gradient(to right, #fa6a04, #ff0000)' }}
+          >
+            +91-9100298446
+          </a>
+
+        
+      
 
       </nav>
 
@@ -77,7 +80,7 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="fixed top-16 left-0 w-full bg-white shadow-md md:hidden flex flex-col items-center space-y-4 py-4">
           <button onClick={() => scrollToSection("project-overview")}>Project Overview</button>
-          <button onClick={() => scrollToSection("amenities")}>Amenities</button>
+          <button onClick={() => scrollToSection("amenities")}>Highlights</button>
           <button onClick={() => scrollToSection("pricing")}>Pricing</button>
           <button onClick={() => scrollToSection("nri-support")}>NRI Support</button>
           <button onClick={() => scrollToSection("connectivity")}>Connectivity</button>

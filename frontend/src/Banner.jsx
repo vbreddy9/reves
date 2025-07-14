@@ -113,7 +113,7 @@ const Banner = () => {
           <p className="text-lg md:text-xl text-gray-100 mb-4">
             Schedule your{" "}
             <span style={{ color: '#cb8904' }}>exclusive site visit</span> today at{" "}
-            <span style={{ color: '#cb8904' }}><strong>Neopolis</strong></span> — Hyderabad’s most promising address for future-forward living.
+            <span style={{ color: '#cb8904' }}><strong>Maheshwaram</strong></span> — Shamshabad’s most promising address for future-forward living.
           </p>
           <hr className="border-gray-500" />
         </div>
@@ -151,15 +151,29 @@ const Banner = () => {
               onChange={(value) =>
                 setFormData((prev) => ({ ...prev, mobile: value }))
               }
-              containerClass="w-full"
-              inputClass="py-4 bg-transparent"
               inputProps={{
                 name: "mobile",
                 required: true,
               }}
-              
-              
+              containerStyle={{
+                width: "100%",
+              }}
+              inputStyle={{
+                width: "100%",
+                height: "48px", // same height as other inputs
+                border: "1px solid #d1d5db", // Tailwind: border-gray-300
+                borderRadius: "0.375rem", // Tailwind: rounded
+                paddingLeft: "50px", // space for flag
+                paddingRight: "1rem",
+                fontSize: "1rem",
+                boxSizing: "border-box",
+              }}
+              buttonStyle={{
+                border: "none",
+                background: "transparent",
+              }}
             />
+
             {errors.mobile && <p className="text-red-500 text-sm">{errors.mobile}</p>}
 
             <div className="flex items-start text-sm">
@@ -172,18 +186,21 @@ const Banner = () => {
                 required
               />
               <span>
-                I authorize MSN Projects and its representatives to Call, SMS, Email or WhatsApp me. I also accept{" "}
+                I authorize REVES Township by garudadri Developers and its representatives to Call, SMS, Email or WhatsApp me. I also accept{" "}
                 T&C {" "}and{" "} Pivacy Policy                 .
               </span>
             </div>
             {errors.agreeTerms && <p className="text-red-500 text-sm">{errors.agreeTerms}</p>}
             <button
-              type="submit"
-              className="w-full text-white p-3 rounded text-lg bg-[#cb8904] hover:bg-[#a77203] transition"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? "Submitting..." : "Submit your request"}
-            </button>
+            type="submit"
+            className="w-full text-white p-3 rounded text-lg hover:opacity-90 transition"
+            style={{
+              background: 'linear-gradient(to right, #cb8904, #fa6a04)',
+            }}
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "Submitting..." : "Submit your request"}
+          </button>
 
           </form>
         </div>

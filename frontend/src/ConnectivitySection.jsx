@@ -1,27 +1,55 @@
 import React from "react";
-import { GraduationCap, Hospital, Network, MapPin } from "lucide-react";
-import map from "./assets/loc.webp";
+import {
+  Cpu,
+  Plane,
+  Route,
+  GraduationCap,
+  Factory,
+  Landmark,
+} from "lucide-react";
+import map from "./assets/map.webp";
 
-const connectivityItems = [
+const connectivityPoints = [
   {
-    title: "Education",
-    icon: <GraduationCap className="w-6 h-6 text-maroon-600" />,
-    description: "Close to top international schools & universities",
+    text: "Beside Electronics Hardware Technology Park",
+    icon: <Cpu className="text-yellow-600 w-5 h-5 mt-1" />,
   },
   {
-    title: "Healthcare",
-    icon: <Hospital className="w-6 h-6 text-maroon-600" />,
-    description: "Quick access to renowned hospitals & wellness centers",
+    text: "11 km HCL & Videocon",
+    icon: <Cpu className="text-yellow-600 w-5 h-5 mt-1" />,
   },
   {
-    title: "Business & IT Hubs",
-    icon: <Network className="w-6 h-6 text-maroon-600" />,
-    description: "Minutes away from Gachibowli, HITEC City, and Kokapet",
+    text:
+      "Manufacturing electronic goods like WIPRO, PRO, PR Defence Equipments & MALABAR GOLD & DAIMONDS.",
+    icon: <Factory className="text-yellow-600 w-5 h-5 mt-1" />,
   },
   {
-    title: "Connected Living",
-    icon: <MapPin className="w-6 h-6 text-maroon-600" />,
-    description: "Access to malls, dining, ORR, metro & cultural hubs",
+    text: "15 km from Shamshabad RGI Airport",
+    icon: <Plane className="text-yellow-600 w-5 h-5 mt-1" />,
+  },
+  {
+    text: "10 km from ORR, Pedda Golconda exit",
+    icon: <Route className="text-yellow-600 w-5 h-5 mt-1" />,
+  },
+  {
+    text: "8 km from JIMS & Ramanuja Statue and Swarna Bharathi Trust",
+    icon: <GraduationCap className="text-yellow-600 w-5 h-5 mt-1" />,
+  },
+  {
+    text: "15 km TATA Aerospace Hub, TCS & Wonderla",
+    icon: <Factory className="text-yellow-600 w-5 h-5 mt-1" />,
+  },
+  {
+    text: "E-SEZ Maheswaram - EMC (Electronic Manufacturing Cluster)",
+    icon: <Cpu className="text-yellow-600 w-5 h-5 mt-1" />,
+  },
+  {
+    text: "7 km from HYD & Bangalore Highway at Timmapur",
+    icon: <Route className="text-yellow-600 w-5 h-5 mt-1" />,
+  },
+  {
+    text: "Upcoming Dukes and My Home Villas",
+    icon: <Landmark className="text-yellow-600 w-5 h-5 mt-1" />,
   },
 ];
 
@@ -30,40 +58,66 @@ const ConnectivitySection = () => {
     <section className="bg-white py-12 px-4 md:px-16 lg:px-24">
       <div className="text-center mb-10">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-maroon-800 text-center">
-        Seamlessly Connected, <span style={{ color: '#cb8904' }}>Ideally Positioned</span>
-      </h2>
-      <p className="mt-4 text-gray-600 text-sm sm:text-base md:text-lg max-w-3xl mx-auto text-center">
-        ONE is located in Neopolis, Hyderabad, offering seamless access to top schools, hospitals, business hubs, and leisure destinations—bringing the perfect balance to life.
-      </p>
+          Seamlessly Connected,&nbsp;
+          <span
+            style={{
+              background: "linear-gradient(to right, #cb8904, #fa6a04)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              display: "inline-block",
+            }}
+          >
+            Ideally Positioned
+          </span>
+        </h2>
+        <p className="mt-4 text-gray-600 text-sm sm:text-base md:text-lg max-w-3xl mx-auto text-center">
+          REVES Township is located in Maheshwaram, close to Shamshabad
+          International Airport, offering seamless access to business hubs, top
+          schools, hospitals, highways and lifestyle destinations.
+        </p>
       </div>
 
       {/* Two Column Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-        {/* Left: Info Cards */}
-        <div className="space-y-6">
-          {connectivityItems.map((item, index) => (
+        {/* Left: Cards with custom icons */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {connectivityPoints.map((point, index) => (
             <div
               key={index}
-              className="flex items-start p-5 rounded-xl shadow-md bg-gradient-to-br from-white to-gray-50 border hover:shadow-lg transition duration-300"
+              className="flex items-start gap-3 bg-white border border-yellow-100 p-4 rounded-lg shadow-sm hover:shadow-lg transition duration-300"
             >
-              <div className="mr-4">{item.icon}</div>
-              <div>
-                <h4 className="text-lg font-semibold text-maroon-700">{item.title}</h4>
-                <p className="text-gray-700 text-sm">{item.description}</p>
-              </div>
+              {point.icon}
+              <p className="text-gray-800 text-sm font-medium">{point.text}</p>
             </div>
           ))}
         </div>
 
-        {/* Right: Map Image */}
+        {/* Right: Map with CTA button */}
         <div className="relative rounded-xl overflow-hidden shadow-xl">
-          <img src={map}
-            alt="Map"
-            className="w-full h-auto object-cover rounded-lg"
+          <img
+            src={map}
+            alt="Location Map"
+            className="w-full h-[450px] object-cover rounded-lg"
           />
-          <button className="absolute top-4 right-4 bg-maroon-700 text-gray px-4 py-2 rounded-lg hover:bg-maroon-800 transition">
-            Navigate to ONE
-          </button>
+          <a
+  href="https://www.google.com/maps/place/Maheshwaram,+Telangana"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="absolute top-4 right-4 px-2 py-1 rounded-lg hover:opacity-90 transition text-white font-semibold"
+  style={{
+    background: "linear-gradient(to right, #cb8904, #fa6a04)",
+  }}
+>
+  <span
+    style={{
+      
+      display: "inline-block",
+    }}
+  >
+    Navigate to REVES
+  </span>
+</a>
+
         </div>
       </div>
     </section>

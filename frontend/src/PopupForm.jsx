@@ -161,7 +161,7 @@ const PopupForm = ({ show: externalShow, onClose: externalOnClose }) => {
               required
             />
             <span>
-                I authorize MSN Projects and its representatives to Call, SMS, Email or WhatsApp me. I also accept{" "}
+                I authorize REVES Township by garudadri Developers and its representatives to Call, SMS, Email or WhatsApp me. I also accept{" "}
                 T&C {" "}and{" "} Pivacy Policy                 .
               </span>
           </div>
@@ -171,11 +171,15 @@ const PopupForm = ({ show: externalShow, onClose: externalOnClose }) => {
 
           <button
             type="submit"
-            className="w-full text-white p-3 rounded text-lg bg-[#cb8904] hover:bg-[#a77203] transition"
+            className="w-full text-white p-3 rounded text-lg hover:opacity-90 transition"
+            style={{
+              background: 'linear-gradient(to right, #cb8904, #fa6a04)',
+            }}
             disabled={isSubmitting}
           >
             {isSubmitting ? "Submitting..." : "Submit your request"}
           </button>
+
         </form>
       </div>
     </div>
