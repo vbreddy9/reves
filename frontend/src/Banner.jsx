@@ -62,7 +62,7 @@ const Banner = () => {
 
     try {
       const response = await axios.post(
-        "http://api.revestownship.in/home/send-email", // Match backend port here
+        "https://api.revestownship.in/home/send-email", // Match backend port here
         {
           name: formData.name,
           email: formData.email,
