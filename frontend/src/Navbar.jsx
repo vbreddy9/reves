@@ -86,11 +86,11 @@ const Navbar = () => {
           <button onClick={() => scrollToSection("connectivity")}>Connectivity</button>
           <button onClick={() => scrollToSection("about")}>About</button>
           <a
-            href="callto:+919392925831"
+            href="callto:+919100298446"
             className="blinking-button px-4 py-2 text-white rounded-full shadow-md hover:opacity-90 transition duration-300"
             style={{ backgroundColor: '#4f1021' }}
           >
-            Call +91-9392925831
+            Call +91-9100298446
           </a>
 
         </div>
