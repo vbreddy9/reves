@@ -100,14 +100,14 @@ const ConnectivitySection = () => {
             className="w-full h-[450px] object-cover rounded-lg"
           />
           <a
-  href="https://www.google.com/maps/place/Maheshwaram,+Telangana"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="absolute top-4 right-4 px-2 py-1 rounded-lg hover:opacity-90 transition text-white font-semibold"
-  style={{
-    background: "linear-gradient(to right, #cb8904, #fa6a04)",
-  }}
->
+          href="https://maps.app.goo.gl/U6JR3jwqR58GVW2g8"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute top-4 right-4 px-2 py-1 rounded-lg hover:opacity-90 transition text-white font-semibold"
+          style={{
+            background: "linear-gradient(to right, #cb8904, #fa6a04)",
+          }}
+        >
   <span
     style={{
       
