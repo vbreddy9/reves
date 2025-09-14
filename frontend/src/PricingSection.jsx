@@ -27,7 +27,7 @@ const PricingSection = () => {
         <div className="flex justify-between pt-4 text-left">
           <p className="text-black">134-167 SQ.YRDS</p>
           
-          <p className="text-black">Starting ₹29 Lacs*</p>
+          <p className="text-black">Starting ₹35 Lacs*</p>
         </div>
        </div>
 
